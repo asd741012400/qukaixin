@@ -1,0 +1,15 @@
+<!--pages/integral/integral.wxml-->
+<view class='integral'>
+  <view class='integral-center'>
+    <view class='integral-center-second' wx:for="{{messList}}" data-id='{{item.IntegralDetailId}}'>
+      <view class='integral-center-head-left'>
+        <view class='integral-center-head-left-name'>{{item.IntegralSource}}</view>
+        <view class='integral-center-head-left-date'>{{item.ChangeTime}}</view>
+      </view>
+      <view class='integral-center-head-right'>{{item.IntegralVariation}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='aaa' wx:if="{{imgShow}}"><image src='../images/1111.png'></image></view>
+<view class='message-center-bottom' wx:if="{{show}}">没有更多了</view>

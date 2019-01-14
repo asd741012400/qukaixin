@@ -1,0 +1,31 @@
+<!--pages/message/message.wxml-->
+
+<view class='DataIsEmpty' wx:if="{{DataIsEmpty}}">
+  <view class='DataIsEmptyText'>
+    <view>
+      <image src='http://image.quku199.com/withoutDataImages/message.png'></image>
+    </view>
+    <text>暂无系统消息</text>
+  </view>
+</view>
+
+
+<view class='date' wx:else>
+  <view class='message'>
+    <view class='message-center' bindtap='urlFun' wx:for="{{messList}}" data-id='{{item.RecordId}}'>
+      <view class='message-center-head'>
+        <view class='message-center-head-left'>
+          <view class='message-center-head-left-name'>{{item.MessageTitle}}</view>
+          <view class='message-center-head-left-date'>{{item.CreateDate}}</view>
+        </view>
+        <view class='message-center-head-right'><image src='http://image.quku199.com/personal/personal-left.png'></image></view>
+      </view>
+    </view>
+
+
+  </view>
+  <view class='aaa' wx:if="{{imgShow}}"> <image src='../images/1111.png'></image> </view>
+  <view class='message-center-bottom' wx:if="{{show}}">没有更多了</view>
+</view>
+
+

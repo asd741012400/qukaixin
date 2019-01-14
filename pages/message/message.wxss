@@ -1,0 +1,113 @@
+/* pages/message/message.wxss */
+
+.DataIsEmpty{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DataIsEmpty .DataIsEmptyText{
+  width: 258rpx;
+  text-align: center;
+}
+.DataIsEmpty .DataIsEmptyText view{
+  width: 258rpx;
+  height: 176rpx;
+}
+.DataIsEmpty .DataIsEmptyText view image{
+  width: 100%;
+  height: 100%;
+}
+.DataIsEmpty .DataIsEmptyText text{
+  font-size: 26rpx;
+  color: #999999;
+  padding-top: 50rpx;
+
+}
+
+.message {
+  width: 750rpx;
+  height: 100%;
+  border-top: 1px solid #e5e5e5;
+}
+
+.message-center {
+  margin: 0 auto;
+  width: 702rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-center-head {
+  height: 120rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  align-items: center;
+}
+
+.message-center-head-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-center-head-left-name {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.message-center-head-left-date {
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 4rpx;
+}
+
+.message-center-head-right {
+  width: 9rpx;
+  height: 18rpx;
+  position: relative;
+}
+
+.message-center-head-right image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.message-center-bottom {
+  color: #666;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 41rpx;
+}
+
+.aaa {
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aaa image {
+  width: 50rpx;
+  height: 50rpx;
+  animation: myfirst 1s linear infinite normal;
+}
+
+@keyframes myfirst {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

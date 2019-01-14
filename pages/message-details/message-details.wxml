@@ -1,0 +1,8 @@
+<!--pages/message-details/message-details.wxml-->
+<view class='message-details'>
+  <view class='message-details-head'>
+    <view class='message-details-head-name'>{{megaTitle}}</view>
+    <view class='message-details-head-date'>{{megaDate}}</view>
+  </view>
+  <view class='message-details-content'>{{megaContion}}</view>
+</view>

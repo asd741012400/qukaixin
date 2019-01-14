@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/withdraw/withdraw",
+    "pages/pay/pay",
+    "pages/bindBankcardTwo/bindBankcardTwo",
+    "pages/personalCenter/personalCenter",
+    "pages/HomePage/HomePage",
+    "pages/seek/seek",
+    "pages/personal/personal",
+    "pages/free-details/free-details",
+    "pages/order/order",
+    "pages/merchant/merchant",
+    "pages/shopDetails/shopDetails",
+    "pages/balance/balance",
+    "pages/set/set",
+    "pages/map/map",
+    "pages/merchant-details/merchant-details",
+    "pages/bankCard/bankCard",
+    "pages/bindBankcard/bindBankcard",
+    "pages/blockchain/blockchain",
+    "pages/Free-Volume-List/Free-Volume-List",
+    "pages/integral1/integral1",
+    "pages/Member/Member",
+    "pages/confirm/confirm",
+    "pages/feedback/feedback",
+    "pages/cooperator/cooperator",
+    "pages/integral/integral",
+    "pages/volume/volume",
+    "pages/help/help",
+    "pages/Update-Phone/Update-Phone",
+    "pages/Update-NewPhone/Update-NewPhone",
+    "pages/BindAlipay/BindAlipay",
+    "pages/cooperation/cooperation",
+    "pages/about/about",
+    "pages/enter/enter",
+    "pages/TouchBalance/TouchBalance",
+    "pages/message/message",
+    "pages/city/city",
+    "pages/VerifyPhone/VerifyPhone",
+    "pages/message-details/message-details",
+    "pages/food-fen/food-fen",
+    "pages/shopList/shopList",
+    "pages/membership/membership"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#313131",
+    "navigationBarTextStyle":"#ffffff"
+  },
+
+
+  "tabBar": {
+    "color": "#888888",
+    "selectedColor": "#fd8137",
+    "borderStyle": "red",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "selectedIconPath": "pages/images/order-Shou1.png",
+        "iconPath": "pages/images/order-Shou.png",
+        "pagePath": "pages/HomePage/HomePage",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "pages/images/Order.png",
+        "iconPath": "pages/images/Order1.png",
+        "pagePath": "pages/order/order",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "pages/images/order-autor11.png",
+        "iconPath": "pages/images/order-autor.png",
+        "pagePath": "pages/personalCenter/personalCenter",
+        "text": "我的"
+      }
+    ]
+  }
+
+}

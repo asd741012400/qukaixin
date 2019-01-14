@@ -1,0 +1,17 @@
+<!--pages/cooperation/cooperation.wxml-->
+
+<view class='cooperation-head'>
+<view class='cooperation-HX'></view>
+  <view class='cooperation-head-center' bindtap='urlFun' data-url='{{item.cooperUrl}}' wx:for="{{cooperList}}" data-id='{{item.id}}'>
+    <view class='cooperation-head-center-top'>
+      <view class='cooperation-head-center-top-left'><image src='{{item.cooperImg}}'></image></view>
+      <view class='cooperation-head-center-top-center'>
+        <view class='cooperation-head-center-top-center-name'>{{item.cooperTitle}}</view>
+        <view class='cooperation-head-center-top-center-txt'>{{item.cooperText}}</view>
+      </view>
+      <view class='cooperation-head-center-top-right' >{{item.text}}</view>
+    </view>
+  </view>
+
+
+</view>

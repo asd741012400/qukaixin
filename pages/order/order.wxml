@@ -1,0 +1,72 @@
+<view class='order-tab'>
+  <view class='order-tabs'>
+    <view class='order-first {{ tabIndex == 0 ? "active" : ""}} ' catchtap='tabBindtap' data-id='0'>
+      <view class='order-first-bottom'>
+        <text>全部订单</text>
+      </view>
+    </view>
+    <view class='order-second {{ tabIndex == 1 ? "active" : ""}}' catchtap='tabBindtap' data-id='1'>
+      <view class='order-second-bottom'> 
+        <text>已评价</text>
+      </view>
+    </view>
+    <view class='order-three {{ tabIndex == 2 ? "active" : ""}}' catchtap='tabBindtap' data-id='2'>
+      <view class='order-three-bottom'>
+        <text>未评价</text>
+      </view>
+    </view>
+  </view>
+  
+
+</view>
+<view class='order-header'></view>
+<view class='order-body' wx:if="{{allListEnd}}">
+  <block wx:for="{{allList}}" wx:key="unique">
+    <view class='order-body-first' catchtap='urlFun' data-url='{{item.OrderType == 1?"merchant-details":"shopDetails"}}' data-cid='{{item.TypeId}}'  data-bid='{{item.BusinessID}}' data-oid='{{item.OrderId}}'>
+      <view class='order-body-firstL'>
+        <view class='order-body-firstImg'>
+          <image src='{{item.ImageURL}}'></image>
+          <view wx:if="{{item.State == 1}}" class='order-body-secondImg'>
+            <image src='http://image.quku199.com/order/order-head.png'></image>
+          </view> 
+        </view>
+        <view class='order-body-second'>
+          <view class='order-body-head'>
+            <view class='order-body-head-view'>
+              <view class='order-body-head-name'>{{item.BusinessName}}</view>
+              <image src='http://image.quku199.com/order/order-left.png'></image>
+            </view>
+            <view wx:if="{{item.State == 1}}" class='order-body-box' catchtap='urlFun' data-url='merchant' data-bid='{{item.BusinessID}}' data-cid='{{item.TypeId}}' data-oid='{{item.OrderId}}'>去评价</view> 
+            <view class='star' wx:else>
+              <view wx:for="{{starsNum}}" wx:key="unique" wx:for-index="idx" wx:for-item="itemName">
+                <view wx:if="{{ (idx+1) <= item.Star}}"><image src='http://image.quku199.com/order/order-xing.png'></image></view>
+                <view wx:elif="{{ (idx+1) - item.Star < 1 && (idx+1) - item.Star != 0}}"><image src='http://image.quku199.com/order/order-Bxing.png'></image></view>
+                <view wx:else><image src='http://image.quku199.com/order/order-Mxing.png'></image></view>
+              </view>
+            </view> 
+          </view>
+          <view class='order-body-date'>{{item.PayTime}}</view>
+          <view class='order-body-head-bottom'>
+            <view class='order-body-head-bottom-roll'>{{item.CouponName}}</view>
+            <view class='order-body-head-tottom-mark'>
+              <text wx:if="{{item.OrderType == 1}}">{{item.MaxIntegral}}积分</text>
+              <text wx:else>{{item.MaxIntegral}}元</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='hs_lodingbg' wx:if="{{loding}}">
+  <view class='hs_loding'>
+    <view class='hs_loding_img' wx:if="{{lodingText}}">
+      <view><image src='http://image.quku199.com/Free-Volume-List/icon_loding.png'></image></view>
+      <text>加载中...</text>
+    </view>
+    <view class='hs_loding_text' wx:else>
+      <text>没有更多了...</text>
+    </view>
+  </view>
+</view>  
+

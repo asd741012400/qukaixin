@@ -1,0 +1,26 @@
+<!--pages/blockchain/blockchain.wxml-->
+<view class='blockchain'>
+  <image src='http://image.quku199.com/bankCard/black.png' class='blockchain-img'></image>
+  <view class='blockchain-head'>
+      <view class='blockchain-head-one'>区块链秘钥</view>
+      <view class='blockchain-head-two'>什么是区块链</view>
+      <view class='blockchain-head-three'>
+      <image src='http://image.quku199.com/bankCard/downJT.png'></image>
+      </view>
+  </view>
+  <view class='blockchain-body'>
+    <image src='http://image.quku199.com/bankCard/white.png' class='blockchain-body-img'></image>
+    <view class='blockchain-body-head'>
+      <text class='blockchain-body-head-one'>您的用户编号</text>
+      <text class='blockchain-body-head-two'>{{BlockChainNumber}}</text>
+    </view>
+    <view class='blockchain-body-second'>
+      <text class='blockchain-body-head-one'>您的密钥</text>
+      <text class='blockchain-body-head-two'>{{BlockChainPwd}}</text>
+    </view>
+    <view class='blockchain-body-three'>
+      <text class='blockchain-body-head-one'>您的区块链地址</text>
+      <text class='blockchain-body-head-two'>{{BlockChainSite}}</text>
+    </view>
+  </view>
+</view>

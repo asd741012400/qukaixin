@@ -1,0 +1,29 @@
+/* pages/message-details/message-details.wxss */
+.message-details{
+  width: 750rpx;
+  height: 100%;
+  border-top: 1px solid #e5e5e5;
+}
+.message-details-head{
+  margin-top: 40rpx;
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+.message-details-head-name{
+  	color: #333333;
+    font-size: 30rpx;
+}
+.message-details-head-date{
+  color: #999999;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.message-details-content{
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: 49rpx;
+  font-size: 28rpx;
+  text-indent: 2em;
+  color: #666666;
+}

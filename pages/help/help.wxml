@@ -1,0 +1,89 @@
+<view class='hs_tab'>
+  <view class='hs_tab_title'>
+
+    <view class='hs_tab_titles {{tabIndex == 0 ? "titleActive" : ""}}' data-idx='0' bindtap='tableFn'>
+      <view class='hs_tab_titles_text'>
+        <view>支付问题</view>
+      </view>
+      <text></text>
+    </view>
+    <view class='hs_tab_titles {{tabIndex == 1 ? "titleActive" : ""}}' data-idx='1' bindtap='tableFn'>
+      <view class='hs_tab_titles_text'>
+        <view>优惠问题</view>
+      </view>
+      <text></text>
+    </view>
+    <view class='hs_tab_titles {{tabIndex == 2 ? "titleActive" : ""}}' data-idx='2' bindtap='tableFn'>
+      <view class='hs_tab_titles_text'>
+        <view>订单问题</view>
+      </view>
+      <text></text>
+    </view>
+    <view class='hs_tab_titles {{tabIndex == 3 ? "titleActive" : ""}}' data-idx='3 ' bindtap='tableFn'>
+      <view class='hs_tab_titles_text'>
+        <view>其他问题</view>
+      </view>
+      <text></text>
+    </view>
+  </view>
+
+
+  <view class='hs_tab_centent '>
+    <block wx:for="{{CenterList}}">
+      <!-- <view class='hs_tab_centent_text {{tabIndex == 0 ? "cententActive" : ""}}'> -->
+      <view class='hs_tab_centent_text cententActive'>
+        <view class='hs_tab_centent_text_list' id="{{index}}">
+          <view class='hs_tab_centent_text_list_title'>{{item.Question}}</view>
+          <view class='hs_tab_centent_text_list_text'>{{item.Answer}}</view>
+        </view>
+
+      </view>
+    </block>
+
+  </view>
+
+
+  <!-- <view class='hs_tab_centent_text {{tabIndex == 1 ? "cententActive" : ""}}'>
+
+      <view class='hs_tab_centent_text_list'>
+        <view class='hs_tab_centent_text_list_title'>Q：2问题，指要求回答或解答的题目；事态的严重性足以引人研究讨论，或尚待解决者？</view>
+        <view class='hs_tab_centent_text_list_text'>A：2见《续资治通鉴·宋太宗太平兴国八年》：“进士免贴经，只试墨义二十道，皆以经中正文大义为问题。”</view>
+      </view>
+
+      <view class='hs_tab_centent_text_list'>
+        <view class='hs_tab_centent_text_list_title'>Q：问题，指要求回答或解答的题目；事态的严重性足以引人研究讨论，或尚待解决者？</view>
+        <view class='hs_tab_centent_text_list_text'>A：见《续资治通鉴·宋太宗太平兴国八年》：“进士免贴经，只试墨义二十道，皆以经中正文大义为问题。”</view>
+      </view>
+
+    </view>
+
+
+    <view class='hs_tab_centent_text {{tabIndex == 2 ? "cententActive" : ""}}'>
+
+      <view class='hs_tab_centent_text_list'>
+        <view class='hs_tab_centent_text_list_title'>Q：3问题，指要求回答或解答的题目；事态的严重性足以引人研究讨论，或尚待解决者？</view>
+        <view class='hs_tab_centent_text_list_text'>A：3见《续资治通鉴·宋太宗太平兴国八年》：“进士免贴经，只试墨义二十道，皆以经中正文大义为问题。”</view>
+      </view>
+
+      <view class='hs_tab_centent_text_list'>
+        <view class='hs_tab_centent_text_list_title'>Q：问题，指要求回答或解答的题目；事态的严重性足以引人研究讨论，或尚待解决者？</view>
+        <view class='hs_tab_centent_text_list_text'>A：见《续资治通鉴·宋太宗太平兴国八年》：“进士免贴经，只试墨义二十道，皆以经中正文大义为问题。”</view>
+      </view>
+
+    </view>
+
+    <view class='hs_tab_centent_text {{tabIndex == 3 ? "cententActive" : ""}}'>
+
+      <view class='hs_tab_centent_text_list'>
+        <view class='hs_tab_centent_text_list_title'>Q：4问题，指要求回答或解答的题目；事态的严重性足以引人研究讨论，或尚待解决者？</view>
+        <view class='hs_tab_centent_text_list_text'>A：4见《续资治通鉴·宋太宗太平兴国八年》：“进士免贴经，只试墨义二十道，皆以经中正文大义为问题。”</view>
+      </view>
+
+      <view class='hs_tab_centent_text_list'>
+        <view class='hs_tab_centent_text_list_title'>Q：问题，指要求回答或解答的题目；事态的严重性足以引人研究讨论，或尚待解决者？</view>
+        <view class='hs_tab_centent_text_list_text'>A：见《续资治通鉴·宋太宗太平兴国八年》：“进士免贴经，只试墨义二十道，皆以经中正文大义为问题。”</view>
+      </view>
+
+    </view> -->
+
+</view>

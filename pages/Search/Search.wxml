@@ -1,0 +1,18 @@
+<!--pages/seek/seek.wxml-->
+<view class='container'>
+<view class='search-head'>
+  <view class='search-head-center'>
+    <view class='search-head-center-one'><image src='http://image.quku199.com/Search/search-ss.png'></image></view>
+    <view class='search-head-center-second'><input placeholder='请输入你需要的内容...'></input></view>
+    <view class='search-head-center-three'><image src='http://image.quku199.com/Search/search-xx.png'></image></view>
+    <view class='search-head-center-four'></view>
+    <view class='search-head-center-five'>取消</view>
+  </view>
+</view>
+<view class='search-second'>
+  <view class='search-second-center'>
+    <view class='search-second-center-one'><image src='http://image.quku199.com/Search/search-sss.png'></image></view>
+    <view class='search-second-center-two'>泰熙家</view>
+  </view>
+</view>
+</view>

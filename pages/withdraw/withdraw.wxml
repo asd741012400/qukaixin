@@ -1,0 +1,148 @@
+<!--pages/withdraw/withdraw.wxml-->
+<view class='withdraw'>
+  <view class='withdraw-head'>
+    <view class='withdraw-head-center'>
+      <view class='withdraw-head-center-top'>
+        <view class='withdraw-head-center-top-name'>提现金额</view>
+        <view class='withdraw-head-center-top-input'>
+          <input placeholder='请输入提现金额' type='number' value='{{Amoney}}' bindinput='Amoney'></input>
+        </view>
+      </view>
+      <view class='withdraw-head-center-bottom'>
+        <view class='withdraw-head-center-bottom-name'>可提现金额￥
+          <text>{{Tmoney}}</text>
+        </view>
+        <view class='withdraw-head-center-bottom-text' catchtap='AllWithdrawal'>全部提现</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='withdraw-four'>
+    <view class='withdraw-four-center'>
+      <view class='withdraw-four-center-top'>到账时间</view>
+      <view class='withdraw-four-center-bottom' bindtap='reachTime'>
+        <view class='withdraw-four-center-bottom-left'>{{timeTxet}}</view>
+        <view class='withdraw-four-center-bottom-right'>
+          <image src='http://image.quku199.com/free-details/free-left.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='withdraw-second'>
+    <view class='withdraw-second-center'>
+      <view class='withdraw-second-center-top'>请选择提现至</view>
+
+      <view class='withdraw-second-center-bottom' bindtap='Xtype' data-xindex='0'>
+        <view class='withdraw-second-center-bottom-img'>
+          <image src='http://image.quku199.com/bankCard/BankCard.png'></image>
+        </view>
+        <view class='withdraw-second-center-bottom-second'>
+          <view class='withdraw-second-center-bottom-second-top'>银行卡</view>
+          <view class='withdraw-second-center-bottom-second-btm'>{{silverCard.text}}</view>
+        </view>
+        <view class='withdraw-second-center-bottom-imgs' wx:if="{{silverCard.start == 1}}">
+          <image wx:if="{{moneytype==0}}" src='http://image.quku199.com/withdraw/withdraw-GG.png'></image>
+          <image wx:else src='http://image.quku199.com/confirm/confirm-QQ1.png'></image>
+        </view>
+        <view class='withdraw-second-center-bottom-text' wx:else bindtap='bindBank'>
+          <view class='withdraw-second-center-bottom-text-left'>去绑定</view>
+          <view class='withdraw-second-center-bottom-text-right'>
+            <image src='http://image.quku199.com/free-details/free-left.png'></image>
+          </view>
+        </view>
+      </view>
+
+      <!-- <view class='withdraw-second-center-bottom' bindtap='Xtype' data-xindex='1'>
+        <view class='withdraw-second-center-bottom-img'><image src='http://image.quku199.com/withdraw/withdraw-Zfb.png'></image></view>
+        <view class='withdraw-second-center-bottom-second'>
+          <view class='withdraw-second-center-bottom-second-top'>支付宝</view>
+          <view class='withdraw-second-center-bottom-second-btm'>推荐有支付宝账户的用户使用</view>
+        </view>
+        <view class='withdraw-second-center-bottom-imgs'>
+          <image wx:if="{{moneytype==1}}" src='http://image.quku199.com/withdraw/withdraw-GG.png'></image>
+          <image wx:else src='http://image.quku199.com/confirm/confirm-QQ1.png'></image>
+        </view>
+      </view> -->
+
+      <view class='withdraw-second-center-bottom' bindtap='Xtype' data-xindex='1'>
+        <view class='withdraw-second-center-bottom-img'>
+          <image src='http://image.quku199.com/confirm/confirm-wechat.png'></image>
+        </view>
+        <view class='withdraw-second-center-bottom-second'>
+          <view class='withdraw-second-center-bottom-second-top'>微信</view>
+          <view class='withdraw-second-center-bottom-second-btm'>推荐安装微信5.0及以上的用户使用</view>
+        </view>
+        <view class='withdraw-second-center-bottom-imgs'>
+          <image wx:if="{{moneytype==1}}" src='http://image.quku199.com/withdraw/withdraw-GG.png'></image>
+          <image wx:else src='http://image.quku199.com/confirm/confirm-QQ1.png'></image>
+        </view>
+      </view>
+
+
+
+    </view>
+  </view>
+
+  <view class='withdraw-three {{btn?"AAAactive":""}}' bindtap='withdrawal'>确认提现</view>
+</view>
+
+<!-- 绑定支付宝 -->
+<view class='withdraw-pop' wx:if="{{zFb}}">
+  <view class='withdraw-pop-Bbox'>
+    <view class='withdraw-pop-Bbox-head'>
+      <view class='withdraw-pop-Bbox-head-img'>
+        <image src='http://image.quku199.com/withdraw/withdraw-CW.png'></image>
+      </view>
+      <view class='withdraw-pop-Bbox-head-second'>提现失败</view>
+      <view class='withdraw-pop-Bbox-head-three'>微信系统故障，请稍后再试</view>
+    </view>
+    <view class='withdraw-pop-Bbox-bottom'>
+      <view class='withdraw-pop-Bbox-bottom-left' catchtap='zFbFun'>取消</view>
+    </view>
+  </view>
+</view>
+ 
+
+<!-- 选择时间 -->
+<view class='withdraw-time' wx:if="{{reTime}}">
+  <view class='withdraw-time-box'>
+    <view class='withdraw-time-box-top'>
+      <view class='withdraw-time-box-top-left'>选择到账时间</view>
+      <view class='withdraw-time-box-top-right' bindtap='close'>
+        <image src='http://image.quku199.com/confirm/cuoWu.png'></image>
+      </view>
+    </view>
+    <view class='withdraw-time-box-body' wx:for="{{serviceCharge}}" wx:key="unique" bindtap='cutImg' data-index='{{index}}' data-text='{{item.name}}' data-percentage='{{item.Percentage}}' data-id='{{item.types}}'>
+      <view class='withdraw-time-box-body-left'>{{item.name}}</view>
+      <view class='withdraw-time-box-body-right'>
+        <image wx:if="{{timeIndex == index}}" src='http://image.quku199.com/withoutDataImages/solid.png'></image>
+
+        <image wx:else src='http://image.quku199.com/withoutDataImages/hollow.png'></image>
+      </view>
+    </view>
+
+
+  </view>
+</view>
+
+
+<view class='withdraw-details' wx:if="{{withdrawDeposit}}">
+  <view class='withdraw-details-box'>
+    <view class='withdraw-details-box-top'>提现明细</view>
+    <view class='withdraw-details-box-body'>
+      <view class='withdraw-details-box-body-left'>提现金额</view>
+      <view class='withdraw-details-box-body-right'>
+        <text>{{moneyDetail.usable}}</text>元</view>
+    </view>
+    <view class='withdraw-details-box-body'>
+      <view class='withdraw-details-box-body-left'>手续费</view>
+      <view class='withdraw-details-box-body-right'>
+        <text>{{moneyDetail.commissionCharge}}</text>元</view>
+    </view>
+    <view class='withdraw-details-box-bottom'>
+      <view class='withdraw-details-box-bottom-left' catchtap='withdrawDepositClose'>取消</view>
+      <view class='withdraw-details-box-bottom-right' catchtap='withdrawDepositFun'>确定</view>
+    </view>
+  </view>
+</view>

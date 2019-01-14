@@ -1,0 +1,162 @@
+
+<view class='container'>
+
+
+  <view class='hs_Header'>
+
+    <view class='header_search'>
+      <view class='header_search_imgage' >
+        <view class='header_search_img'><image src='http://image.quku199.com/HeadSearch-Template/03.png'></image></view>
+        <input class='header_search_text' bindinput='emptyFun' confirm-type="search" placeholder='请输入你需要的内容...' bindconfirm="confirmFun"></input>
+      </view>
+      <view class='header_search_address'>
+        <view class='header_search_img'>
+          <view>
+          <image class='XiaoXi' bindtap='urlFun' data-url='message' src='http://image.quku199.com/HeadSearch-Template/xiaoxi.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 头部搜索 -->
+    <view class='Head-Navigation'>
+      <view class="Head-Navigation-Binds {{currentIndex==0?'active':''}}" data-current='0' catchtap="clickTab" data-state='{{onenum}}'>
+        <view>
+          <text>{{areaText}}</text>
+          <image src='http://image.quku199.com/bankCard/topJT.png' wx:if="{{currentIndex==0}}"></image>
+          <image src='http://image.quku199.com/Free-Volume-List/DaoSanjia.png' wx:else></image>
+        </view>
+      </view>
+      <view class="Head-Navigation-Binds {{currentIndex==1?'active':''}}" data-current='1' catchtap="clickTab" data-state='{{townum}}'>
+        <view>
+          <text>{{typeShop}}</text>
+          <image src='http://image.quku199.com/bankCard/topJT.png' wx:if="{{currentIndex==1}}"></image>
+          <image src='http://image.quku199.com/Free-Volume-List/DaoSanjia.png' wx:else></image>
+        </view>
+      </view>
+      <view class="Head-Navigation-Binds {{currentIndex==2?'active':''}}" data-current='2' catchtap="clickTab" data-state='{{threenum}}'>
+        <view>
+          <text>{{sortText}}</text>
+          <image src='http://image.quku199.com/bankCard/topJT.png' wx:if="{{currentIndex==2}}"></image>
+          <image src='http://image.quku199.com/Free-Volume-List/DaoSanjia.png' wx:else></image>
+        </view>
+      </view>
+    </view>
+    <!-- 头部导航 -->
+    <view class='hs_nearbyBg' wx:if="{{nearbyMetro}}" catchtap='showHidden' data-item='hs_nearbyBg'>
+
+
+      <view class='hs_nearby' catchtap='hiddenShow' data-item='hs_nearby'>
+        <view class='hs_nearby_body'>
+          <view class='hs_nearby_tradingArea'>
+            <scroll-view scroll-y>
+              <text class='{{ current3Index == index? "active" : ""}}' wx:for="{{nearby}}" wx:key="unique" data-index='{{index}}' catchtap='areaFun' data-id='{{item.TradingAreaID}}'>{{item.CityName}}</text>
+            </scroll-view>
+          </view>
+          <view class='hs_nearby_km'>
+            <scroll-view scroll-y>
+              <text wx:for="{{nearbyList}}" wx:key="unique" class='{{ current4Index == index? "active" : ""}}' data-index='{{index}}' catchtap='tradingAreaFun' data-id='{{item.TradingAreaID}}' data-text='{{item.Area_Name}}'>{{item.Area_Name}}</text>
+            </scroll-view>
+          </view>
+        </view>
+        
+      </view>  
+
+    </view>
+
+
+      <view class='hs_cateBg' wx:if="{{cate}}" catchtap='showHidden' data-item='hs_cateBg'>
+        <view class='hs_cate' catchtap='hiddenShow' data-item='hs_cate'>
+          <scroll-view scroll-y>
+            <text wx:key="unique" wx:for="{{cateList}}" data-id='{{item.TypeID}}' class='{{ cate2Index == index? "active" : ""}}' data-index='{{index}}' catchtap='cateFun' data-text='{{item.TypeName}}'>{{item.TypeName}}</text>
+          </scroll-view>
+        </view>
+      </view>
+    
+
+      <view class='hs_sortBg' wx:if="{{sort}}" catchtap='showHidden' data-item='hs_sortBg'>
+        <view class='hs_sort' catchtap='hiddenShow' data-item='hs_sort'>
+          <scroll-view scroll-y>
+            <text data-id='{{item.types}}' wx:key="unique" wx:for="{{sortList}}" class='{{ sort2Index == index? "active" : ""}}' data-index='{{index}}' catchtap='sortFun' data-text='{{item.name}}'>{{item.name}}</text>
+          </scroll-view>
+        </view>
+      </view>
+      
+    </view>
+  <!-- 隐藏层，弹窗用 -->
+
+  <view class='hs_events'>
+    <scroll-view>
+      <block wx:for="{{shangjiaQuan}}" wx:key="unique">
+        <view class='Events' catchtap='urlFun' data-url='merchant-details' data-id='{{item.CouponID}}' wx:if="{{item.state == 1}}">
+        <view class='Events-image'>
+          <image class='Events-logo' src='{{item.CouponImageUrl}}' lazy-load="true" bindload="imageOnLoad"></image>
+          <image wx:if="{{item.MaxIntegral == 0}}" class='BiaoQian' src='http://image.quku199.com/Free-Volume-List/biaoqian1.png'></image>
+          <image wx:else class='BiaoQian' src='http://image.quku199.com/Free-Volume-List/biaoqian2.png'></image>
+        </view>
+        <!-- logo -->
+        <view class='Merchants-live'>
+          <view class='Vendor-Name'>{{item.CouponName}}</view>
+          <view class='AddressInfo'>
+            <image src='http://image.quku199.com/Free-Volume-List/location.png'></image>
+            <text>{{item.Adress}}</text>
+          </view>
+          <view class='Already'>已领
+            <label>{{item.ReceiveCount}}</label>张</view>
+        </view>
+        <view class='backStyle'>
+          <view class='Top-Back BackStyle-view'></view>
+          <view class='Mid-Border'></view>
+          <view class='Footer-Back BackStyle-view'></view>
+        </view>
+        <view class='Integral'>
+          <text>{{item.MaxIntegral}}积分</text>
+          <view class='Immediately' catchtap='getDiscount' data-id='{{item.CouponID}}'>立即领取</view>
+        </view>
+      </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  
+
+   
+  <view class='hs_lodingbg' wx:if="{{loding}}">
+    <view class='hs_loding'>
+      <view class='hs_loding_img' wx:if="{{lodingText}}">
+        <view><image src='http://image.quku199.com/Free-Volume-List/icon_loding.png'></image></view>
+        <text>加载中...</text>
+      </view>
+      <view class='hs_loding_text' wx:else>
+        <text>没有更多了...</text>
+      </view>
+    </view>
+  </view>   
+
+
+
+
+
+
+</view>
+
+<view class='hs_popBg' wx:if="{{popShow}}">
+  <view class='hs_pop_content'>
+      <view class='hs_pop' wx:if="{{popStateShow}}">
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_succes.png'></image></view>
+      <view class='hs_pop_text1'>领取成功</view>
+      <view class='hs_pop_text2'>请在免费券有效期以内去使用</view>
+      <view class='hs_pop_btn'>
+        <text catchtap='popShow'>取消</text>
+        <text catchtap='urlFun' data-url='free-details'>去使用</text>
+      </view>
+    </view>  
+      <view class='hs_pop' wx:else>
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_err.png'></image></view>
+      <view class='hs_pop_text1'>领取失败</view>
+      <view class='hs_pop_text2'>{{popMsg}}</view>
+      <view class='hs_pop_btn'>
+        <view catchtap='popShow'>确定</view>
+      </view>
+    </view>  
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<!--pages/about/about.wxml-->
+
+<view class='about'>
+  <view class='about-head-HX'></view>
+  <view class='about_img'><image src='{{aboutImg}}'></image></view>
+  <view class='about-content'>{{aboutcontion}}</view>
+</view>

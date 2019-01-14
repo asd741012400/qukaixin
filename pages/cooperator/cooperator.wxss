@@ -1,0 +1,145 @@
+/* pages/cooperator/cooperator.wxss */
+
+page {
+  background-color: #f2f2f2;
+}
+
+.cooperator-head {
+  width: 750rpx;
+  margin-top: 20rpx;
+  height: 100%;
+  background-color: #fff;
+}
+
+.cooperator-head-center {
+  margin: 0 auto;
+  height: 100%;
+  width: 702rpx;
+}
+
+.cooperator-head-center-one {
+  height: 89rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cooperator-head-center-two {
+  height: 89rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cooperator-head-center-one-name {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.cooperator-head-center-one-input {
+  width: 300rpx;
+  font-size: 26rpx;
+  color: #999;
+  text-align: right;
+}
+
+.cooperator-second {
+  width: 750rpx;
+  height: 90rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.cooperator-second-center {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 702rpx;
+  align-items: center;
+  height: 100%;
+}
+
+.cooperator-second-center-name {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.cooperator-second-center-input {
+  width: 300rpx;
+  font-size: 26rpx;
+  margin-left: 180rpx;
+  text-align: right;
+}
+
+.cooperator-second-center-txt {
+  color: #000;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.cooperator-three {
+  width: 750rpx;
+  height: 100%;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.cooperator-three-center {
+  margin: 0 auto;
+  height: 100%;
+  width: 702rpx;
+}
+
+.cooperator-three-center-one {
+  height: 89rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cooperator-three-center-one-name {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.cooperator-three-center-one-input {
+  width: 300rpx;
+  font-size: 26rpx;
+  color: #999;
+  text-align: right;
+}
+
+.cooperator-three-center-two {
+  height: 89rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.cooperator-four{
+  color: #999999;
+  font-size: 26rpx;
+  margin-top: 40rpx;
+  margin-left: 244rpx;
+}
+.cooperator-five{
+  width: 590rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  margin-top: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(-90deg, 
+		#fd8137 0%, 
+		#fdc337 100%);
+    border-radius: 50rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    letter-spacing: 2rpx;
+}

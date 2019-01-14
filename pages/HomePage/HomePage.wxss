@@ -1,0 +1,327 @@
+@import "../HeadSearch-Template/HeadSearch-Template.wxss";
+/* 头部搜索样式 */
+page{
+  background: #f2f2f2;
+}
+.Container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 80rpx;
+}
+
+
+.header_search .header_search_address .header_search_img view{
+  height: 45rpx;
+  width: 34rpx;
+}
+
+/* -----------------------头部搜索------------------------ */
+
+swiper{
+  width: 100%;
+  height:302rpx;
+   
+}
+swiper image{
+  width: 100%;
+  height: 302rpx;
+}
+
+/* -----------------------轮播------------------------ */
+.Classification{
+  width: 750rpx;
+  background: #fff;
+}
+.content{
+  width: 750rpx;
+  flex-flow: wrap;
+  display: flex;
+  flex-direction: row;
+}
+.content view{
+  vertical-align: middle;
+   width: 150rpx;
+  height: 166rpx; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ms{
+  width: 93rpx;
+  height: 93rpx;
+}
+
+.content view text{
+  font-size: 26rpx;
+  color: #333;
+  font-family:MicrosoftYaHei;
+}
+
+.dyyc{
+  width: 44rpx;
+  height: 44rpx;
+}
+.jd{
+  width: 48rpx;
+  height: 44rpx;
+}
+.xxyl{
+  width: 41rpx;
+  height: 43rpx;
+}
+.ktv{
+  width: 42rpx;
+  height: 45rpx;
+}
+.lrmf{
+width: 44rpx;
+height: 44rpx;
+}
+.zby{
+  width: 62rpx;
+  height: 46rpx;
+}
+.xh{
+  width: 41rpx;
+  height: 45rpx;
+}
+.zlam{
+  width: 25rpx;
+  height: 45rpx;
+}
+.gd{
+  width: 45rpx;
+  height: 45rpx;
+}
+/* -----------------------分类栏目------------------------ */
+
+.Togoo{
+  width: 750rpx;
+  height: 432rpx;
+  background: #fff;
+  margin: 20rpx 0px; 
+}
+.Head-Togoo{
+  width: 702rpx;
+  height: 78rpx;
+  background: #fff;
+  margin: 0px auto;
+  border-bottom: 1rpx solid #e5e5e5;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.Head-Togoo-Title{
+  font-size: 28rpx;
+  color: #666;
+  line-height: 80rpx;
+}
+.Head-Togoo-More{
+  font-size: 24rpx;
+  color: #999;
+  line-height: 80rpx;
+}
+.Content-Togoo{
+  width: 341rpx;
+  height: 142rpx;  
+  margin-left: 22rpx;
+  margin-top: 24rpx;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.back{
+  width: 100%;
+  height: 142rpx;  
+  position: absolute;
+  z-index: 1;
+}
+.volume{
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.special{
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 320rpx;
+}
+.special-text{
+  width: 193rpx;
+  margin-left: 29rpx;
+}
+.special-text-title{
+  font-size: 24rpx;
+  color: #FD8137;
+  font-weight:700;
+  margin-top: 29rpx;
+  /* margin-left: 29rpx; */
+}
+.special-text-integral{
+  font-size: 24rpx;
+  color: #F03E3E;
+  font-weight: 700;
+  /* margin-left: 29rpx; */
+   margin-top: 14rpx; 
+}
+.special-img{
+  width: 96rpx;
+  height: 96rpx;
+  margin-top: 18rpx;
+  /* margin-left: 16rpx; */
+}
+
+/* -----------------------领券专区------------------------ */
+
+.StarBusiness{
+  width: 100%;
+}
+.Merchant{
+  width: 100%;
+  height: 230rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.Merchant{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+}
+.merchant-logo{
+  width: 174rpx;
+  height: 174rpx;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  margin-top: 22rpx;
+  margin-left: 24rpx;
+  margin-right: 19rpx;
+}
+
+.Details-Top-BusinessName{
+  color: #333;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.Details-Top{
+  margin-top: 30rpx;
+  display: flex;
+  flex: row wrap;
+  justify-content: space-between;
+}
+.Details-Top-Distance{
+  color: #999;
+  font-size: 26rpx;
+}
+.BusinessDetails{
+  width: 504rpx;
+}
+.Grade{
+  height: 20rpx;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: row;
+}
+.Grade image{
+  width: 23rpx;
+  height: 23rpx;
+  margin-right: 16.5rpx;
+  vertical-align: middle;
+}
+
+.EvaluationScore{
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: flex-start;  
+  margin-top: 25rpx;
+  width: 468rpx;
+  border-bottom: 1px dashed #f2f2f2;
+  /* height: 44rpx; */
+  padding-bottom: 20rpx;
+}
+
+.SalesVolume{
+  color: #999;
+  font-size: 24rpx;
+  vertical-align: middle;
+  margin-top: -5rpx;
+  border-left: 1px solid #e5e5e5;
+  padding-left: 20rpx;
+  margin-left: 10rpx;
+}
+
+.LabelDetails{
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  font-size: 22rpx;
+  color: #999;
+  /* padding: 7rpx 3rpx;  */
+   margin-right: 16rpx; 
+  margin-top: 15rpx; 
+  text-align: center;
+  width: 126rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-bottom: 30rpx;
+}
+.labeling{
+  display: flex;
+  flex-direction: row;
+}
+
+.back-StarBusiness{
+  background: #fff;
+}
+/* -----------------------明星商家------------------------ */
+
+.tabbar{
+  width: 750rpx;
+  height: 98rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  z-index: 99;
+  position: fixed;
+  bottom: 0;  
+
+}
+.tabbar view{
+  width: 250rpx;
+  height: 98rpx;
+  color: #888;
+  font-size: 20rpx;  
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+}
+.tabbar text{
+  vertical-align: middle;
+  /* margin-left: 76rpx; */
+  text-align: center;
+}
+.tabbar image{
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0px auto;
+  vertical-align: middle;
+  margin-top: 19rpx;
+  /* margin-left: 76rpx; */
+  margin-bottom: 10rpx;
+  
+}
+.tabbar-order{
+  width: 31rpx;
+  height: 37rpx;  
+}
+
+.PitchOn{
+  color: #FD8137;
+}
+
+/* -----------------------底部导航------------------------ */

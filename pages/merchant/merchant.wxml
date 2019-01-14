@@ -1,0 +1,51 @@
+<!--pages/merchant/merchant.wxml-->
+
+<view class='merchant-second'>
+  <view class='merchant-second-img'><image src='{{merchant.HeadImageUrl}}'></image></view>
+  <view class='merchant-second-right'>
+    <view class='merchant-second-right-one'>{{merchant.BusinessName}}</view>
+    <view class='merchant-second-right-two'>{{merchant.CouponName}}</view>
+    <view class='merchant-second-right-three'>{{merchant.MaxIntegral}}积分</view>
+  </view>
+</view>
+<view class='merchant-three'>
+<view class='merchant-three-center'>
+  <view class='merchant-three-center-head'>
+    <view class='merchant-three-center-head-lfet'></view>
+    <view class='merchant-three-center-head-center'>请写下你的评价</view>
+    <view class='merchant-three-center-head-right'></view>
+  </view>
+  <view class='merchant-three-center-second'>
+    <view wx:for="{{starsNum}}" wx:key="unique" catchtap='lightenFun' data-index='{{idx}}' wx:for-index="idx">
+      <view wx:if="{{ (idx+1) <= Star}}"><image src='http://image.quku199.com/order/order-xing.png'></image></view>
+      <view wx:elif="{{ (idx+1) - Star < 1 && (idx+1) - Star != 0}}"><image src='http://image.quku199.com/order/order-Bxing.png'></image></view>
+      <view wx:else><image src='http://image.quku199.com/order/order-Mxing.png'></image></view>
+    </view>  
+  </view>
+  <view class='merchant-three-center-three'>
+    <view class='merchant-three-center-three-top'>
+      <block wx:for="{{labelNames}}" wx:key="unique">
+        <view class='merchant-three-center-three-top-one {{item.stat == 1 ? "active" : ""}}' data-stat='{{item.stat}}' data-index='{{index}}' data-id='{{item.ConfigID}}' catchtap='lightenFun2'>{{item.ConfigName}}</view>
+      </block>
+    </view>
+    <view class='merchant-three-center-three-bottom'><textarea placeholder='其实我还想说...' bindinput='bindinput'></textarea></view>
+  </view>
+</view>
+</view>
+<view class='merchant-four'>
+  <view class='merchant-four-head'>
+    <view>你可能还想去</view>
+  </view>
+  <view class='merchant-four-second'>
+    <block wx:for="{{shopList}}" wx:key="unique">
+      <view class='merchant-four-second-one' catchtap='urlFun' data-url='shopDetails' data-id='{{item.BusinessID}}'>
+        <image src='{{item.HeadImageUrl}}'></image>
+        <view class='merchant-four-second-one-text'>{{item.BusinessName}}</view>
+      </view>
+    </block> 
+  </view>
+
+   
+</view>
+
+<view class='publish_btn' catchtap='submitComment'><view>发布评论</view></view>

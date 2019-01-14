@@ -1,0 +1,16 @@
+<!--pages/TouchBalance/TouchBalance.wxml-->
+<view class='TouchBalance'>
+  <view class='TouchBalance-center' wx:for="{{messList}}" data-id='{{item.AmountID}}'>
+
+    <view class='TouchBalance-center-head'>
+      <view class='TouchBalance-center-head-left'>
+        <view class='TouchBalance-center-head-left-name'>{{item.AmountReason}}</view>
+        <view class='TouchBalance-center-head-left-date'>{{item.CreateTime}}</view>
+      </view>
+      <view class='TouchBalance-center-head-right'>{{item.Amount}}</view>
+    </view>
+  </view>
+</view>
+ <view class='aaa' wx:if="{{imgShow}}"><image src='../images/1111.png'></image></view>
+<view class='message-center-bottom' wx:if="{{show}}">没有更多了</view> 
+<!-- <view class='TouchBalance-center-bottom'>没有更多了</view> -->

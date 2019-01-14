@@ -1,0 +1,142 @@
+
+<!--pages/map/map.wxml-->
+<view class='hs_head {{topUpClose?"closeActive":""}}'></view>
+<view class='hs_header'>
+   <view class='hs_user' bindtap='urlFun' data-url='personalCenter'>
+    <view><image src='http://image.quku199.com/map/icon_user.png'></image></view>
+  </view>
+    <view class='hs_content' bindtap='urlFun' data-url='city'>
+      <view class='hs_text'>{{city}}</view>
+      <view class='hs_img'><image src='http://image.quku199.com/map/icon_pull_down.png'></image></view> 
+    </view>
+    <view class='hs_word' bindtap='urlFun' data-url='message'><image src='http://image.quku199.com/map/icon_word.png'></image></view>
+  </view>
+
+  <view class='hs_menu'>
+    <scroll-view class='hs_menu_text' scroll-x style="width: auto;overflow:hidden;">
+      <view bindtap='menuFun' wx:for="{{menu.menuList}}" data-index='{{index}}' data-id='{{item.TypeID}}' class='{{menu.menuIndex == index ? "active" : ""}}' wx:key="unique">{{item.TypeName}}</view>
+    </scroll-view>
+  </view>
+
+<map id="myMap" controls="{{controls}}" markers="{{markers}}" latitude='{{shopListShow.latitude}}' longitude='{{shopListShow.longitude}}' bindmarkertap="markertap" show-location bindregionchange="refreshFun" controls="{{controls}}" style='height:{{mapHeight}}px'>
+  
+
+
+
+  <cover-view class="hs_btn">
+    <cover-view class='hs_help'>
+      <cover-view class='hs_help_img'><cover-image src='http://image.quku199.com/map/btn_bg2.png'></cover-image></cover-view>
+      <cover-view class='hs_help_text' bindtap='helpFn'>
+        <cover-image src='http://image.quku199.com/map/icon_star.png'></cover-image>
+        <cover-view>帮我选</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class='hs_oneself' bindtap='homeUrlFun' data-url='homePage'>
+      <cover-image src='http://image.quku199.com/map/icon_select.png'></cover-image>
+      <cover-view>自己选</cover-view>
+    </cover-view>
+  </cover-view>
+
+
+  <cover-view class="hs_loading {{loadingShow?'loadingActive':''}}">
+    <cover-view class='hs_loading_body'>
+      <cover-view class='hs_loading_bg'>
+        <cover-view class='hs_loading_close'><cover-image src='http://image.quku199.com/map/icon_close.png'></cover-image></cover-view>
+        <cover-view class='hs_loading_face' style="top:{{loadingFaceTop}}rpx">
+          <cover-image class='hs_face_face' src='http://image.quku199.com/map/smiling_face.png'></cover-image>
+          <!-- <cover-image class='hs_face_shadow' src='http://image.quku199.com/map/icon_shadow.png'></cover-image> -->
+        </cover-view>
+        <cover-view class='hs_loading_text'>
+         <cover-view>正在为你筛选优质免费券</cover-view>
+         <cover-view>请稍等...</cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>  
+  </cover-view>
+
+  <cover-view class="hs_top_up {{topUpClose?'closeActive':''}}">
+    <cover-view class='hs_top_up_body'>
+      <cover-view class='hs_top_up_centent'>
+        <cover-view class="hs_top_up_centent_img">
+          <cover-image src='http://image.quku199.com/map/top_up.png'></cover-image>
+        </cover-view>
+        <cover-view class='hs_top_up_centent_close' bindtap='topUpCloseTap'>
+          <cover-view>
+            <cover-image src='http://image.quku199.com/map/icon_close2.png'></cover-image>
+          </cover-view>
+        </cover-view>
+        <cover-view class='hs_top_up_centent_text' bindtap='homeUrlFun' data-url='Member'>立即去充值</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+
+
+  <cover-view class='hs_intro_bg' style='bottom:{{showBottom}}rpx'>
+    <cover-view class='hs_intro'>
+      <cover-view class='hs_intro_images'>
+        <cover-view class='hs_intro_img'><cover-image src='{{shopDetail.HeadImageUrl}}'></cover-image></cover-view>
+        <cover-view class='hs_intro_text'>
+          <cover-view class='hs_intro_title'>{{shopDetail.BusinessName}}</cover-view>
+          <cover-view class='hs_intro_star'>
+            <cover-view class='hs_intro_stars'>
+              <cover-view class='hs_intro_stars_for' wx:for="{{starsNum}}" wx:key="unique">
+                <cover-view wx:if="{{(index+1)  <= shopDetail.Star}}" ><cover-image  src='http://image.quku199.com/map/icon_five_pointed_starA.png'></cover-image></cover-view>
+                <cover-view wx:elif="{{ (index+1) - shopDetail.Star < 1 && (index+1) - shopDetail.Star != 0 }}"><cover-image  src='http://image.quku199.com/map/icon_five_pointed_starC.png'></cover-image></cover-view>
+                <cover-view wx:else><cover-image  src='http://image.quku199.com/map/icon_five_pointed_starB.png'></cover-image></cover-view>
+              </cover-view>
+            </cover-view>
+            <cover-view class='hs_intro_xian'></cover-view>
+            <cover-view class='hs_intro_num'>月销 {{shopDetail.SalesNum}}</cover-view>
+          </cover-view>
+          <cover-view class='hs_intro_x'></cover-view>
+        </cover-view>
+      </cover-view>
+
+      <cover-view class='hs_address'>
+        <cover-view class='hs_address_body'>
+          <cover-view class='hs_address_details' bindtap='navigationFun'>
+            <cover-image src='http://image.quku199.com/merchant-details-image/details-DW.png'></cover-image>
+            <cover-view>{{shopDetail.Adress}}</cover-view>
+          </cover-view>
+          <cover-view class='hs_address_xian'></cover-view>
+          <cover-view class='hs_address_km'>距离{{shopDetail.Distance}}km</cover-view>
+        </cover-view>  
+        <cover-view class='hs_address_x'></cover-view>
+      </cover-view>
+
+
+      <cover-view class='hs_tag'>
+        <cover-view wx:for="{{shopDetail.LabelName}}" wx:key="unique">{{item}}</cover-view>
+      </cover-view>
+
+      <cover-view class='hs_select_btn'>
+        <cover-view class='hs_select_tel'>
+          <cover-view class='hs_tel_tel' wx:if="{{shopTel}}" bindtap='telFun'>
+            <cover-image src='http://image.quku199.com/map/icon_tel.png'></cover-image>
+            <cover-view>电话联系</cover-view>
+          </cover-view> 
+          <cover-view class='hs_tel_select' wx:else bindtap='helpFn'>
+            <cover-view>换一个</cover-view>
+          </cover-view>
+        </cover-view>
+        <cover-view class='hs_select_confirm' bindtap='affirmFun'>
+          <cover-image src='http://image.quku199.com/map/btn_bg1.png'></cover-image>
+          <cover-view data-url='../HomePage/HomePage'>就TA了</cover-view>
+        </cover-view>
+      </cover-view>  
+
+
+
+      <cover-view class='hs_intro_close' bindtap='closetap'>
+        <cover-view><cover-image src='http://image.quku199.com/map/icon_close.png'></cover-image></cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+
+  <cover-view class='hs_location' bindtap='goBackFun'><cover-image src='http://image.quku199.com/map/icon_home.png'></cover-image></cover-view>
+
+
+
+</map>
+
+

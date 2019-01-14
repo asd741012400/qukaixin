@@ -1,0 +1,260 @@
+<view class="hs_shop">
+
+  <view class="hs_shop_bg">
+    <view class="hs_banner">
+      <swiper indicator-dots="{{banner.indicatorDots}}" indicator-color='rgba(255, 255, 255, 0.2)' indicator-active-color='#fff'>
+          <swiper-item wx:for="{{banner.bannerList}}" wx:key="unique">
+            <view data-url='{{item.ReturnUrl}}'><image src="{{item.ImageThumbnailUrl}}" /></view>
+          </swiper-item>
+      </swiper>
+    </view>
+
+    <view class='hs_shop_name'>
+      <view class='hs_shop_logo'>
+        <image src='{{shopDetails.HeadImageUrl}}'></image>
+      </view>
+      <view class='hs_shop_intro'>
+        <view class='hs_intro_name'>
+          <text class='hs_name_title'>{{shopDetails.BusinessName}}</text>
+          <view class='hs_name_km'>
+            <view><image src='http://image.quku199.com/shopDetails/icon_ranking.png'></image></view>
+            <text>{{shopDetails.Ranking}}名</text>
+          </view>
+        </view>
+        <view class='hs_intro_star'>
+          <view class='hs_star_stars' wx:for="{{starsNum}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
+            <view wx:if="{{ (idx+1) <= shopDetails.Star}}"><image src='http://image.quku199.com/map/icon_five_pointed_starA.png'></image></view>
+            <view wx:elif="{{ (idx+1) - shopDetails.Star < 1 && (idx+1) - shopDetails.Star != 0}}"><image src='http://image.quku199.com/map/icon_five_pointed_starC.png'></image></view>
+            <view wx:else><image src='http://image.quku199.com/map/icon_five_pointed_starB.png'></image></view>
+          </view>
+          <text>月销 {{shopDetails.SalesNum}}</text>
+        </view>
+        <view class='hs_intro_progress'>
+          <text class='hs_progress_title'>生命值</text>
+          <view class='hs_progress_progress_bar'><view style=" width:{{shopDetails.LifeValue}}%"></view></view>
+          <text class='hs_progress_percentage'>{{shopDetails.LifeValue}}%</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='hs_tag'>
+      <view wx:for="{{shopDetails.LabelName}}" wx:key="unique">{{item}}</view>
+    </view>
+
+
+    <view class='hs_address'>
+      <view class='hs_address_details' bindtap='addressFun'>
+        <view class='hs_details_img'><image src='http://image.quku199.com/merchant-details-image/details-DW.png'></image></view>
+        <text>{{shopDetails.Adress}}</text>
+        <view class='hs_details_text'>距离{{shopDetails.Distance}}km</view>
+      </view>
+      <view class='hs_address_tel' bindtap='telFun'><view><image src='http://image.quku199.com/map/icon_tel.png'></image></view></view>
+    </view>
+
+    <view class='hs_time'>
+      <view>营业时间</view>
+      <text>{{shopDetails.BusinessHours}}</text>
+    </view>
+  </view>
+
+  
+  <view class='hs_nofixation {{fixation?"":"fixationActive"}}'>
+    <view class='hs_ranking_list'>
+      <view class='hs_ranking_list_img'>
+        <view class='hs_list_l'>买</view>
+        <view class='hs_list_c'>线上买单</view>
+      </view>
+      <view class='hs_ranking_list_btn' catchtap='urlFun' data-url='pay'>买单</view>
+    </view>
+
+
+
+    <view class="hs_tab_titles">  
+      <view class="hs_tab_title {{tabArr.tabIndex=='0'? 'active' : ''}}" data-id="0" bindtap="tabFun">
+        <view><text>积分换券</text></view>
+      </view>  
+      <view class="hs_tab_title {{tabArr.tabIndex=='1'? 'active' : ''}}" data-id="1" bindtap="tabFun">
+        <view><text>免费领券</text></view>  
+      </view>
+      <view class="hs_tab_title {{tabArr.tabIndex=='2'? 'active' : ''}}" data-id="2" bindtap="tabFun">
+        <view><text>商家介绍</text></view>  
+      </view>  
+      <view class="hs_tab_title {{tabArr.tabIndex=='3'? 'active' : ''}}" data-id="3" bindtap="tabFun">
+        <view><text>用户评论</text></view> 
+      </view>
+    </view>  
+  </view>
+
+
+  <view class='hs_fixation {{fixation?"aaaActive":""}}'>
+    <view class='hs_ranking_list'>
+      <view class='hs_ranking_list_img'>
+        <view class='hs_list_l'>买</view>
+        <view class='hs_list_c'>线上买单</view>
+      </view>
+      <view class='hs_ranking_list_btn' catchtap='urlFun' data-url='pay'>买单</view>
+    </view>
+
+
+
+    <view class="hs_tab_titles">  
+      <view class="hs_tab_title {{tabArr.tabIndex=='0'? 'active' : ''}}" data-id="0" bindtap="tabFun">
+        <view><text>积分换券</text></view>
+      </view>  
+      <view class="hs_tab_title {{tabArr.tabIndex=='1'? 'active' : ''}}" data-id="1" bindtap="tabFun">
+        <view><text>免费领券</text></view>  
+      </view>
+      <view class="hs_tab_title {{tabArr.tabIndex=='2'? 'active' : ''}}" data-id="2" bindtap="tabFun">
+        <view><text>商家介绍</text></view>  
+      </view>  
+      <view class="hs_tab_title {{tabArr.tabIndex=='3'? 'active' : ''}}" data-id="3" bindtap="tabFun">
+        <view><text>用户评论</text></view> 
+      </view>
+    </view>  
+  </view>
+
+
+    <view class="hs_tab_body">  
+      <view class="hs_body_list {{tabArr.tabIndex=='0'? 'active' : ''}}">
+        <view class='hs_get'>
+            <block wx:for="{{integralList}}" wx:key="unique">
+              <view class='hs_get_list' catchtap='urlFun' data-url='merchant-details' data-id='{{item.CouponID}}'>
+                <view class='hs_list_left'>
+                  <view class='hs_left_img'><image bindload="imageOnLoad" src='{{item.CouponImageUrl}}'></image></view>
+                  <view class='hs_left_icon'><image src='http://image.quku199.com/shopDetails/integral.png'></image></view>
+                </view> 
+                <view class='hs_list_centent'>
+                  <view class='hs_content_title'>{{item.BusinessName}}</view>
+                  <view class='hs_content_address'>
+                    <view><image src='http://image.quku199.com/merchant-details-image/details-DW.png'></image></view>
+                    <text>{{item.Adress}}</text>
+                  </view>
+                  <view class='hs_content_num'>已领{{item.ReceiveCount}}张</view>
+                </view>
+                <view class='hs_list_x'>
+                  <view class='hs_x_top'></view>
+                  <view class='hs_x_bottom'></view>
+                </view>
+                <view class='hs_list_right'>
+                  <view class='hs_right_integral'>{{item.MaxIntegral}}积分</view>
+                  <view class='hs_right_get' catchtap='getDiscount' data-id='{{item.CouponID}}'>立即领券</view>
+                </view>
+              </view>
+            </block>
+        </view>
+
+      </view>  
+      <view class="hs_body_list {{tabArr.tabIndex=='1'? 'active' : ''}}">
+        <view class='hs_get'>
+          
+            <block wx:for="{{freeList}}" wx:key="unique">
+              <view class='hs_get_list' catchtap='urlFun' data-url='merchant-details' data-id='{{item.CouponID}}' wx:if="{{item.state == 1}}">
+                <view class='hs_list_left'>
+                  <view class='hs_left_img'><image bindload="imageOnLoad" src='{{item.CouponImageUrl}}'></image></view>
+                  <view class='hs_left_icon'><image src='http://image.quku199.com/shopDetails/free_of_charge.png'></image></view>
+                </view> 
+                <view class='hs_list_centent'>
+                  <view class='hs_content_title'>{{item.BusinessName}}</view>
+                  <view class='hs_content_address'>
+                    <view><image src='http://image.quku199.com/merchant-details-image/details-DW.png'></image></view>
+                    <text>{{item.Adress}}</text>
+                  </view>
+                  <view class='hs_content_num'>已领{{item.ReceiveCount}}张</view>
+                </view>
+                <view class='hs_list_x'>
+                  <view class='hs_x_top'></view>
+                  <view class='hs_x_bottom'></view>
+                </view>
+                <view class='hs_list_right'>
+                  <view class='hs_right_integral'>{{item.MaxIntegral}}积分</view>
+                  <view class='hs_right_get' catchtap='getDiscount' data-id='{{item.CouponID}}'>立即领券</view>
+                </view>
+              </view>
+            </block>
+          
+        </view>
+      </view>  
+      <view class="hs_body_list {{tabArr.tabIndex=='2'? 'active' : ''}}">
+        <view class='hs_list_text'>
+          <text>{{shopDetailsAreIntroduced}}</text>
+        </view>
+      </view>  
+      <view class="hs_body_list {{tabArr.tabIndex=='3'? 'active' : ''}}">
+        <view class='hs_list_user'>
+          <view class='hs_user_num'><text>全部评论（{{commentLists.commentListsNum}}条）</text></view>
+          <view class='hs_user_list_data'>
+            <block wx:for="{{commentLists.commentList}}" wx:key="unique">
+              <view class='hs_data_list'>
+                <view class='hs_list_portrait'><image src='{{item.HeadImageUrl}}'></image></view>
+                <view class='hs_list_content'>
+                  <view class='hs_content_name'>
+                    <text class='hs_name_name'>{{item.UserName}}</text>
+                    <text class='hs_name_time'>{{item.CommentTime}}</text>
+                  </view>
+                  <view class='hs_content_stars'>
+                    <view class='hs_star_stars' wx:for="{{starsNum}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
+                        <view wx:if="{{ (idx+1) <= item.Star}}">
+                            <image src='http://image.quku199.com/map/icon_five_pointed_starA.png'></image>
+                        </view>
+                    <view wx:elif="{{ (idx+1) - item.Star < 1 && (idx+1) - item.Star != 0}}">
+                      <image src='http://image.quku199.com/map/icon_five_pointed_starC.png'></image>
+                    </view>
+                    <view wx:else><image src='http://image.quku199.com/map/icon_five_pointed_starB.png'></image></view>
+                    </view>
+                  </view>
+                  <view class='hs_content_text'>
+                    <text>{{item.CommentContent}}</text>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>  
+
+      <view class='hs_lodingbg' wx:if="{{loding}}">
+        <view class='hs_loding'>
+          <view class='hs_loding_img' wx:if="{{lodingText}}">
+            <view><image src='http://image.quku199.com/Free-Volume-List/icon_loding.png'></image></view>
+            <text>加载中...</text>
+          </view>
+          <view class='hs_loding_text' wx:else>
+            <text>没有更多了...</text>
+          </view>
+        </view>
+      </view> 
+
+        
+    </view> 
+
+  
+
+
+
+
+
+</view>
+
+<view class='hs_popBg' wx:if="{{popShow}}">
+  <view class='hs_pop_content'>
+      <view class='hs_pop' wx:if="{{popStateShow}}">
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_succes.png'></image></view>
+      <view class='hs_pop_text1'>领取成功</view>
+      <view class='hs_pop_text2'>请在免费券有效期以内去使用</view>
+      <view class='hs_pop_btn'>
+        <text catchtap='popShow'>取消</text>
+        <text catchtap='urlFun' data-url='free-details'>去使用</text>
+      </view>
+    </view>  
+      <view class='hs_pop' wx:else>
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_err.png'></image></view>
+      <view class='hs_pop_text1'>领取失败</view>
+      <view class='hs_pop_text2'>{{popMsg}}</view>
+      <view class='hs_pop_btn'>
+        <view catchtap='popShow'>确定</view>
+      </view>
+    </view>  
+  </view>
+</view>
+
+

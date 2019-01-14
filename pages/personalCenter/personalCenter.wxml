@@ -1,0 +1,143 @@
+<view class="hs_user">
+  <view class='hs_user_img' bindtap='urlFun' data-url='../personal/personal'><view><image src='{{Headimg}}'></image></view></view>
+
+  <view class='hs_user_name'>
+    <view class='hs_user_names'>{{HeadName}}</view>
+    <view class='hs_user_level'>
+       <view class='hs_user_member' wx:if="{{LevelTypeIDState == 3}}" bindtap='urlFun' data-url='../membership/membership'>
+        <view class='hs_user_member_l'><image src='http://image.quku199.com/personalCenter/silver_card.png'></image></view>
+        <view class='hs_user_member_c'>{{LevelTypeName}}</view>
+        <view class='hs_user_member_r'><image src='http://image.quku199.com/personalCenter/icon_left.png'></image></view>
+      </view>
+      <view class='hs_user_member' wx:if="{{LevelTypeIDState == 2}}" bindtap='urlFun' data-url='../membership/membership'>
+        <view class='hs_user_member_l'><image src='http://image.quku199.com/personalCenter/copper_card.png'></image></view>
+        <view class='hs_user_member_c'>{{LevelTypeName}}</view>
+        <view class='hs_user_member_r'><image src='http://image.quku199.com/personalCenter/icon_left.png'></image></view>
+      </view> 
+      <view class='hs_user_member' bindtap='urlFun' data-url='../Member/Member' wx:if="{{LevelTypeIDState == 1}}">
+        <view class='hs_user_member_c'>{{LevelTypeName}}</view>
+        <view class='hs_user_member_r'><image src='http://image.quku199.com/personalCenter/icon_left.png'></image></view>
+      </view>
+    </view>
+  </view>
+  
+  <view class='hs_user_set'>
+    <view class='hs_user_num'> 当前排名：<text>{{Myrank_no}}</text></view>
+    <view class='hs_user_set_num' bindtap='urlFun' data-url='../set/set'>
+      <view><image src='http://image.quku199.com/personalCenter/icon_set.png'></image></view>
+    </view>
+  </view>  
+</view>
+
+<view class='hs_user_data'>
+  <view class='hs_user_datas' bindtap='urlFun' data-url='../volume/volume'>
+    <view class='hs_user_data_x'>
+      <view class='hs_user_data_num'>{{MyFree_Coupons}}张</view>
+      <view class='hs_user_data_title'>免费券</view>
+    </view>
+  </view>
+  <view class='hs_user_datas' bindtap='urlFun' data-url='../balance/balance'>
+    <view class='hs_user_data_x'>
+      <view class='hs_user_data_num'>￥{{MyUserBalance}}</view>
+      <view class='hs_user_data_title'>余额</view>
+    </view>
+  </view>
+  <view class='hs_user_datas' bindtap='urlFun' data-url='../integral1/integral1'>
+    <view class='hs_user_data_x'>
+      <view class='hs_user_data_num'>{{MyIntegral}}积分</view>
+      <view class='hs_user_data_title'>积分</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='hs_signIn'>
+  <view class='hs_signIn_l'>今日签到</view>
+   <view class='hs_signIn_c'></view> 
+  <view class='hs_signIn_r'>
+    <view class='hs_signIn_r_already' wx:if="{{OsignIn == 1}}">今日已签</view>
+    <view class='hs_signIn_r_not' wx:else bindtap='signInFn' data-element='0'>立即签到</view>
+  </view>
+</view>
+
+
+<view class='hs_more'>
+  <view class='hs_more_title'>更多推荐</view>
+  <view class='hs_more_body'>
+    <view class='hs_more_body_text'>
+      <view><image src='http://image.quku199.com/personalCenter/icon_invite.png'></image></view>
+      <text>邀请有奖</text>
+    </view>
+    <view class='hs_more_body_text' bindtap='urlFun' data-url='../cooperation/cooperation'>
+      <view><image src='http://image.quku199.com/personalCenter/icon_cooperation.png'></image></view>
+      <text>我要合作</text>
+    </view>
+    <view class='hs_more_body_text' bindtap='urlFun' data-url='../feedback/feedback'>
+      <view><image src='http://image.quku199.com/personalCenter/icon_opinion.png'></image></view>
+      <text>意见反馈</text>
+    </view>
+    <view class='hs_more_body_text' bindtap='urlFun' data-url='../help/help'>
+      <view><image src='http://image.quku199.com/personalCenter/icon_help.png'></image></view>
+      <text>帮助</text>
+    </view>
+    <view class='hs_more_body_text' bindtap='urlFun' data-url='../bankCard/bankCard'>
+      <view><image src='http://image.quku199.com/personalCenter/bankcard.png'></image></view>
+      <text>银行卡</text>
+    </view>
+    <view class='hs_more_body_text' bindtap='urlFun' data-url='../blockchain/blockchain'>
+      <view><image src='http://image.quku199.com/personalCenter/qukuai.png'></image></view>
+      <text>区块链</text>
+    </view>
+   
+  </view>
+</view>
+
+
+<view class='hs_rankingList' >
+  <view class='hs_rankingList_title'>排行榜</view>
+  <view class='hs_rankingList_body'>
+  
+    <view class='hs_rankingList_body_list' wx:for="{{rankingList}}" wx:key="unique">
+      <view class='hs_rankingList_body_list_num'>
+        <view class='hs_rankingList_body_list_num_one' wx:if="{{index == 0}}">
+          <image src='http://image.quku199.com/personalCenter/ranking_list1.png'></image>
+        </view>
+        <view class='hs_rankingList_body_list_num_tow' wx:elif="{{index == 1}}">
+          <image src='http://image.quku199.com/personalCenter/ranking_list2.png'></image>
+        </view>
+        <view class='hs_rankingList_body_list_num_three' wx:elif="{{index == 2}}">
+          <image src='http://image.quku199.com/personalCenter/ranking_list3.png'></image>
+        </view>
+
+        <text class='hs_rankingList_body_list_nums' wx:else>{{index+1}}</text>
+      </view>
+      <view class='hs_rankingList_body_list_img'><image src='{{item.HeadImageUrl}}'></image></view>
+      <text class='hs_rankingList_body_list_text'>{{item.UserName}}</text>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- <view class="hs_signIna" wx:if="{{signInShow}}" bindtap='signInFn' data-element='1'>
+  <view class='hs_signIn_body'>
+    <view class='hs_sigIn_body_img'><image src='http://image.quku199.com/integral/sigIn_img.png'></image></view>
+    <text>积分+500</text>
+    <text></text>
+  </view>
+</view> -->
+
+<view class="hs_signIna" wx:if="{{signInShow}}"  data-element='1'>
+
+  <view class='hs_signIn_body'>
+    <view class='hs_sigIn_body_img'>
+      <image src='http://image.quku199.com/personalCenter/suber.png'></image>
+       <image class='closeImg' bindtap='clickFalse' src='http://image.quku199.com/personalCenter/closeImgber.png'></image>
+    </view>
+    <text>积分+<text>{{songjifen}}</text></text>
+    <text wx:if="{{LevelTypeIDState == 1}}">成为会员，领取更多积分</text>
+    <image wx:if="{{LevelTypeIDState == 1}}" class='clickPayVip' bindtap='clickPayVip' src='http://image.quku199.com/personalCenter/btmmember.png'></image>
+  </view>
+
+</view>
+

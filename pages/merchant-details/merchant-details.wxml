@@ -1,0 +1,75 @@
+
+<view class='details-head-banner'>
+  <image class='details-image' src='{{data.CouponImageUrl}}'></image>
+  <text class='details-head-bannerTT'></text>
+  <image class='details-head-imageH' src='{{data.HeadImageUrl}}'></image>
+</view>
+<view class='details-title'>
+  <view class='details-title-content'>
+    <block wx:if="{{arr}}"> 
+      <view wx:for="{{data.LabelName}}" wx:key="unique">{{item}}</view>
+    </block>
+    <view wx:else>{{data.LabelName}}</view>
+  </view>
+  <view class='details-phone' bindtap='telFun'>
+    <image src='http://image.quku199.com/merchant-details-image/details-phone.png'></image>
+  </view>
+</view>
+<view class='details-address'>
+  <view class='details-address-img'>
+    <image src='http://image.quku199.com/merchant-details-image/details-DW.png'></image>
+  </view>
+  <view class='details-address-word' bindtap='navigationFun'>{{data.Adress}}</view>
+  <view class='details-address-distance'>距离{{data.Distance}}m</view>
+</view>
+<view class='details-HX'></view>
+<view class='details-Num'>
+  <view class='details-num'>数量</view>
+  <view class='details-num-right'>
+  <view class='details-nuM-left'>已领<text>{{data.LeadNumber}}</text>张</view>
+  <view class='details-num-SX'></view>
+  <view class='details-nuM-right'>剩余<text>{{data.ReceiveCount}}</text>张</view>
+  </view>
+</view>
+<view class='details-date'>
+  <view class='details-date-left'>有效期</view>
+  <view class='details-date-right'>{{data.StartTime}}<text>至</text><text>{{data.EndTime}}</text></view>
+</view>
+<view class='details-DHX'></view>
+<view class='details-content'>
+  <view class='details-TJ'>
+    <image class='details-TJL' src='http://image.quku199.com/merchant-details-image/details-JTL.png'></image>
+    <view class='details-TJtitle'>领券须知</view>
+    <image class='details_TJR' src='http://image.quku199.com/merchant-details-image/details-JTR.png'></image>
+  </view>
+  <view class='details-content-xx'>
+    <text>{{data.CouponDesc}}</text>
+  </view>
+</view>
+<view class='details-bottom' wx:if="{{btnForbidden}}">
+  <view class='details-bottom-left'><text>{{data.MaxIntegral}}积分</text></view>
+  <view class='details-bottom_right' catchtap='getDiscount'>立即领券</view>
+</view>
+
+
+<view class='hs_popBg' wx:if="{{popShow}}">
+  <view class='hs_pop_content'>
+      <view class='hs_pop' wx:if="{{popStateShow}}">
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_succes.png'></image></view>
+      <view class='hs_pop_text1'>领取成功</view>
+      <view class='hs_pop_text2'>请在免费券有效期以内去使用</view>
+      <view class='hs_pop_btn'>
+        <text catchtap='popShow'>取消</text>
+        <text catchtap='urlFun' data-url='free-details'>去使用</text>
+      </view>
+    </view>  
+      <view class='hs_pop' wx:else>
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_err.png'></image></view>
+      <view class='hs_pop_text1'>领取失败</view>
+      <view class='hs_pop_text2'>{{popMsg}}</view>
+      <view class='hs_pop_btn'>
+        <view catchtap='popShow'>确定</view>
+      </view>
+    </view>  
+  </view>
+</view>

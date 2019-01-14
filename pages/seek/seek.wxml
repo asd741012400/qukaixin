@@ -1,0 +1,58 @@
+<!--pages/seek/seek.wxml-->
+<view class='container'>
+  <view class='seek-head'>
+    <view class='seek-center'>
+      <view class='seek-center-left'>
+        <view class='seek-center-one'>
+          <image src='http://image.quku199.com/Search/search-ss.png'></image>
+        </view>
+        <view class='seek-center-two'>
+          <input placeholder='请输入你需要的内容...' value='{{val}}' bindinput='bindKeyInput'></input>
+        </view>
+      </view>
+      <view class='seek-center-right'>
+        <view class='seek-center-three'></view>
+        <view class='seek-center-four' wx:if="{{content}}">搜索</view>
+        <view class='seek-center-four' wx:else bindtap='cancelFun'>取消</view>
+      </view>
+    </view>
+  </view>
+  <view class='seek-second' wx:if="{{content}}">
+    <view class='seek-second-head' wx:if="{{searchHistory.length > 0}}">
+      <view class='seek-second-head-left'>历史搜索</view>
+      <view class='seek-second-head-right' catchtap='delSearch'>
+        <image src='http://image.quku199.com/seek/seek-lj.png'></image>
+      </view>
+    </view>
+    <view class='seek-second-two'>
+      <block wx:for="{{searchHistory}}" wx:key="unique">
+        <view class='seek-second-two-to' catchtap='shortcut2' data-index='{{index}}'>{{item}}</view>
+      </block>
+    </view>
+    <view class='seek-second-three' wx:if="{{hotSearch}}">
+      <view class='seek-second-three-head'>热门搜索</view>
+      <view class='seek-second-three-two'>
+        <block wx:for="{{hotSearchList}}" wx:key="unique">
+          <view class='seek-second-three-two-to' catchtap='shortcut' data-types='{{item.types}}'>{{item.name}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class='search-second' wx:else>
+    <block wx:for="{{searchList}}" wx:key="unique">
+      <view class='search-second-center' data-url='{{item.types == 2?"shopDetails":"merchant-details"}}' bindtap='urlFun2' data-bid='{{item.BusinessID}}' data-cid='{{item.CouponID}}' data-index='{{index}}'>
+        <view class='search-second-center-one'><image src='http://image.quku199.com/Search/search-sss.png'></image></view>
+        <view class='search-second-center-two' wx:if="{{item.types == 1}}">{{item.CouponName}}</view>
+        <view class='search-second-center-two' wx:else>{{item.BusinessName}}</view>
+      </view>
+    </block>
+    <view class='search-second-text' wx:if="{{searchRecord}}">暂无信息</view>
+    
+  </view>
+
+</view>
+
+
+
+

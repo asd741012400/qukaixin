@@ -1,0 +1,33 @@
+<!--pages/bindBankcardTwo/bindBankcardTwo.wxml-->
+<view class='bindBankcardTwo'>
+  <view class='bindBankcardTwo-head'>
+    <view class='bindBankcardTwo-head-one'>
+      <view class='bindBankcardTwo-head-one-left'>银行卡</view>
+      <view class='bindBankcardTwo-head-one-right'>{{BankName}}</view>
+    </view>
+    <view class='bindBankcardTwo-head-two'>
+      <view class='bindBankcardTwo-head-two-left'>卡号</view>
+      <view class='bindBankcardTwo-head-two-right'>{{BankNum}}</view>
+    </view>
+  </view>
+  <view class='bindBankcardTwo-body'>
+    <view class='bindBankcardTwo-body-center'>
+      <view class='bindBankcardTwo-body-center-one'>
+        <view class='bindBankcardTwo-body-center-one-left'>手机号</view>
+        <view class='bindBankcardTwo-body-center-one-right'><input placeholder='银行预留手机号' bindinput='Phone' type='number' maxlength="11"></input></view>
+      </view>
+      <view class='bindBankcardTwo-body-center-two'>
+        <view class='bindBankcardTwo-body-center-two-O'>校验码</view>
+        <view class='bindBankcardTwo-body-center-two-T'><input placeholder='填写校验码' type='number' bindinput='CheckNum' maxlength="6"></input></view>
+        
+       <button class='bindBankcardTwo-body-center-two-F' disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode">{{time}}</button>
+      </view>
+    </view>
+  </view>
+  <view class='bindBankcardTwo-three'>
+    <view class='bindBankcardTwo-three-left' bindtap='yanzheng' wx:if="{{check==0}}"><image src='http://image.quku199.com/bankCard/check.png'></image></view>
+    <view class='bindBankcardTwo-three-left' bindtap='yanzheng' wx:elif="{{check==1}}"><image src='http://image.quku199.com/bankCard/pitch.png'></image></view>
+    <view class='bindBankcardTwo-three-right'>我已阅读并同意<text>《趣开心用户协议》</text></view>
+  </view>
+  <button class='bindBankcardTwo-bottom {{Isdisabled?"bottomActive":""}}' bindtap='BindBankCard' >确定绑定</button>
+</view>

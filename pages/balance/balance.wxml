@@ -1,0 +1,8 @@
+<!--pages/balance/balance.wxml-->
+<view class='balance'>
+  <view class='balance-logo'><image src='{{logo}}'></image></view>
+  <view class='balance-My'>{{My}}</view>
+  <view class='balance-money'>￥<text>{{money}}</text></view>
+  <view class='balance-Tmoney' bindtap='urlFun' data-url='../withdraw/withdraw'>提现</view>
+  <view class='balance-TouchBalance' bindtap='urlFun' data-url='../TouchBalance/TouchBalance'>{{TouchBalance}}</view>
+</view>

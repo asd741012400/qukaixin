@@ -1,0 +1,110 @@
+<import src="../HeadSearch-Template/HeadSearch-Template.wxml" />
+<view class='Container'>
+    <view class='header_search'>
+      <view class='header_search_imgage' bindtap='urlFun' data-url='seek'>
+        <view class='header_search_img'><image src='http://image.quku199.com/HeadSearch-Template/03.png'></image></view>
+        <view class='header_search_text'>请输入你需要的内容...</view>
+      </view>
+      <view class='header_search_address'>
+        <view class='header_search_img'>
+          <view>
+          <image class='XiaoXi' bindtap='urlFun' data-url='map' src='http://image.quku199.com/HomePage/ditu.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  <!--头部搜索-->
+  <swiper indicator-dots="true" autoplay="true" circular="true" indicator-active-color="#fff">
+    <block wx:for="{{bannerImg}}" wx:key="unique">
+      <swiper-item>
+        <image src='{{item.ImageThumbnailUrl}}' data-url='{{item.ReturnUrl}}' bindtap='bannerUrl'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--轮播-->
+  <view class='Classification'>    
+    <view class='content'>
+      <view bindtap='urlFun' wx:for="{{menuList}}" data-id='{{item.TypeID}}' wx:key="unique">
+        <image class='ms' src='{{item.TypeIcon}}'></image>
+        <text>{{item.TypeName}}</text>
+      </view>
+       
+    </view>
+  </view>
+  <!-- 分类 -->
+
+  <view class='Togoo'>
+    <view class='Head-Togoo'>
+      <text class='Head-Togoo-Title'>领券专区</text>
+      <text class='Head-Togoo-More' bindtap='urlFun' data-url='Free-Volume-List'>更多></text>
+    </view>
+
+    <view class='volume'>
+      <block wx:for="{{LingQuan}}" wx:key="unique">
+        <view class='Content-Togoo' data-url='merchant-details' data-id='{{item.CouponID}}' bindtap='urlFun'>
+          <image class='back' src='http://image.quku199.com/HomePage/back.png'></image>
+          <view class='special'>
+            <view class='special-text'>
+              <view class='special-text-title'>{{item.CouponName}}</view>
+              <view class='special-text-integral'>{{item.CouponNumber}}积分</view>
+            </view>
+            <image class='special-img' src="http://image.quku199.com/HomePage/WeiQiang.png"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+  <!-- 领劵专区 -->
+
+
+  <view class='StarBusiness'>
+    <view class='back-StarBusiness'>
+      <view class='Head-Togoo'>
+        <text class='Head-Togoo-Title'>明星商家</text>
+        <text class='Head-Togoo-More' bindtap='urlFun' data-url='shopList'>更多></text>
+      </view>
+    </view>
+    <block wx:for="{{StarsSj}}" wx:key="unique" >
+      <view class='Merchant' data-url='shopDetails' bindtap='urlFun' data-id='{{item.BusinessID}}'>
+        <image class='merchant-logo' src='{{item.HeadImageUrl}}'></image>
+        <view class='BusinessDetails'>
+          <view class='Details-Top'>
+            <text class='Details-Top-BusinessName'>{{item.BusinessName}}</text>
+            <text class='Details-Top-Distance'>{{item.Distance}}km</text>
+          </view>
+          
+          <view class='EvaluationScore'>
+            <view class='Grade' wx:for="{{starsNum}}" wx:key="unique" wx:for-index="idx" wx:for-item="itemName">
+              <view wx:if="{{ (idx+1) <= item.Star}}"><image src='http://image.quku199.com/order/order-xing.png'></image></view>
+              <view wx:elif="{{ (idx+1) - item.Star < 1 && (idx+1) - item.Star != 0}}"><image src='http://image.quku199.com/order/order-Bxing.png'></image></view>
+              <view wx:else><image src='http://image.quku199.com/order/order-Mxing.png'></image></view>
+            </view>
+            <view class='SalesVolume'>月销
+              <label>{{item.SalesNum}}</label>
+            </view>
+          </view>
+          
+          <!-- 评价分数 -->
+          <view class='labeling'> 
+            <view wx:if="{{item.LabelName.length == 0}}"></view> 
+            <view wx:elif="{{item.LabelName.length == 1}}">{{item.LabelName}}</view> 
+            <block wx:else>
+              <view class='LabelDetails' wx:for="{{item.LabelName}}" wx:key="unique" wx:for-item="itemNames">{{itemNames}}</view> 
+            </block>
+          </view>
+          <!-- 标签贴 -->
+        </view>
+        <!-- 商家详情 -->
+      </view>
+    </block>
+
+
+
+  </view>
+  <!-- 明星商家 -->
+
+ 
+  <!-- 底部导航 -->
+</view>

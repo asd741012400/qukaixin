@@ -1,0 +1,351 @@
+page {
+  background-color: #f2f2f2;
+  height: 100%;
+}
+
+.free-head {
+  width: 660rpx;
+  height: 765rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.free-head-one {
+  width: 620rpx;
+  height: 52rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid #e5e5e5;
+  padding-top: 28rpx;
+}
+
+.free-head-One {
+  display: flex;
+  flex-direction: row;
+  height: 30rpx;
+  align-items: center;
+}
+
+.free-head-Otext {
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 9rpx;
+}
+
+.free-head-oneimg {
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  height: 30rpx;
+}
+
+.free-head-oneimg image {
+  width: 8rpx;
+  height: 14rpx;
+}
+
+.free-head-two {
+  height: 30rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  font-family: MicrosoftYaHei;
+}
+
+.free-head-Ttext {
+  color: #333;
+  font-size: 28rpx;
+  margin-left: 19rpx;
+}
+
+.free-head-Tnum {
+  color: #666;
+  font-size: 26rpx;
+  margin-left: 329rpx;
+}
+
+.free-head-three {
+  color: #666;
+  font-family: MicrosoftYaHei;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+
+.free-head-XX {
+  width: 100%;
+  height: 24rpx;
+  margin-top: 16rpx;
+}
+
+.free-head-XX image {
+  width: 100%;
+  height: 100%;
+}
+
+.free-head-four {
+  width: 380rpx;
+  height: 70rpx;
+  background-color: #fd8137;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+}
+
+.free-head-Ftext {
+  font-size: 26rpx;
+  line-height: 70rpx;
+  margin-left: 29rpx;
+}
+
+.free-head-Fnum {
+  font-size: 30rpx;
+  margin-left: 30rpx;
+  line-height: 70rpx;
+}
+
+.free-head-five {
+  width: 301rpx;
+  height: 301rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+}
+
+.free-head-five image {
+  width: 100%;
+  height: 100%;
+}
+
+.free-Address {
+  width: 100%;
+  background-color: #fff;
+  height: 135rpx;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.free-Address-left {
+  width: 584rpx;
+  height: 80rpx;
+  margin-left: 25rpx;
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  font-family: MicrosoftYaHei;
+}
+
+.free-Address-name {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.free-Address-bottom {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 8rpx;
+}
+.free-Address-dw-right{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-right: 20rpx;
+}
+
+.free-Address-DW {
+  /* margin-left: 29rpx; */
+}
+
+.free-Address-DW image {
+  width: 15rpx;
+  height: 21rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 8rpx;
+}
+
+.free-Address-num {
+  font-size: 26rpx;
+  color: #999;
+  margin-left: 20rpx;
+}
+
+.free-Address-SX {
+  width: 1rpx;
+  height: 80rpx;
+  background-color: #e5e5e5;
+  margin-top: 28rpx;
+}
+
+.free-Address-phone {
+  width: 42rpx;
+  height: 43rpx;
+  margin-top: 46rpx;
+  margin-left: 49rpx;
+}
+
+.free-Address-dw {
+  color: #999;
+  font-size: 26rpx;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  width: 396rpx;
+}
+
+.free-Address-phone image {
+  width: 100%;
+  height: 100%;
+}
+
+.free-title {
+  width: 100%;
+  height: 87rpx;
+}
+
+.free-title-content {
+  width: 283rpx;
+  height: 30rpx;
+  margin: 0 auto;
+  padding-top: 29rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.free-JTL {
+  width: 66rpx;
+  height: 6rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 19rpx;
+}
+
+.free-JTL image {
+  width: 100%;
+  height: 100%;
+}
+
+.free-title-content-TJ {
+  color: #666;
+  font-size: 28rpx;
+  margin-left: 21rpx;
+}
+
+.free-JTR {
+  width: 66rpx;
+  height: 6rpx;
+  margin-left: 19rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 19rpx;
+}
+
+.free-JTR image {
+  width: 100%;
+  height: 100%;
+}
+.free-list{
+  /* height: 100%; */
+}
+.free-Bottom{
+  width: 100%;
+  height: 230rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+.free-Bottom-img{
+  width: 176rpx;
+  height: 176rpx;
+  margin-top: 22rpx;
+  margin-left: 24rpx;
+}
+.free-Bottom-img image{
+  width: 100%;
+  height: 100%;
+}
+.free-Bottom-right{
+  width: 510rpx;
+  margin-top: 30rpx;
+  margin-left: 19rpx;
+  display: flex;
+  flex-direction: column;
+  font-family: MicrosoftYaHei;
+}
+.free-Bottom-head{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.free-Bottom-Ohead{
+  color: #333333;
+  font-size: 30rpx;
+}
+.free-Bottom-num{
+  color: #999999;
+  font-size: 26rpx;
+}
+.free-Bottom-two{
+  display: flex;
+  flex-direction: row;
+}
+.free-Bottom-two image{
+  width: 23rpx;
+  height: 23rpx;
+}
+.free-Bottom-xing{
+  margin-left: 16rpx;
+}
+.free-Bottom-SX{
+  width: 1rpx;
+  height: 20rpx;
+  background-color: #e5e5e5;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.free-Botoom-word{
+  color: #999999;
+  font-size: 24rpx;
+  margin-left: 24rpx;
+  margin-top: 12rpx;
+}
+.free-Botoom-word text{
+  margin-left: 9rpx;
+}
+.free-Bottom-XuX{
+  width: 470rpx;
+  height: 1rpx;
+  border-bottom: dashed 1px #f2f2f2;
+  margin-top: 16rpx;
+}
+.free-Bottom-four{
+  display: flex;
+}
+
+.free-Bottom-four-box{
+  font-size: 22rpx;
+  color: #999999;
+  width: 110rpx;
+  height: 40rpx;
+  border-radius: 5px;
+	border: solid 1px #e5e5e5;
+  text-align: center;
+  line-height: 40rpx;
+  margin-right: 16rpx;
+  margin-top: 16rpx;
+  margin-bottom: 30rpx;
+}
+
+.free-HX{
+  width: 100%;
+  height: 20rpx;
+}
+
+.star image{
+ margin-right: 8rpx;
+}

@@ -1,0 +1,26 @@
+<!--pages/About/About.wxml-->
+<view class='set-body'>
+<view class='set-HX'></view>
+  <view class='set-top'>
+    <view class='set-top-first' bindtap='urlFun' data-url='../about/about'>
+      <view class='set-top-second-bottom'>
+        <view>关于我们</view>
+        <image src='http://image.quku199.com/set/set-left.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='set-pop'>
+<view class='set-pop-top-head'>
+  <image src='http://image.quku199.com/set/set-succed.png'></image>
+  <view>清除成功</view>
+</view>
+<view class='set-poptop-bottom'>
+  <view class='set-poptop-bottom-head'>确定清除在线缓存？</view>
+  <view class='set-poptop-bottom-B'>
+    <view class='set-poptop-bottom-B-left'>取消</view>
+    <view class='set-poptop-bottom-B-right'>确定清除</view>
+  </view>
+</view>
+</view>

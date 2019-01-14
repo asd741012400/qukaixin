@@ -1,0 +1,70 @@
+<!--pages/personal/personal.wxml-->
+<view class='personal'>
+  <view class='personal-content'>
+    <view class='personal-head'>
+      <view class='personal-head-name'>头像</view>
+      <view class='personal-head-right'>
+      <view class='personal-head-imgone'><image src='{{PersonalImg}}'></image></view>
+      <view class='personal-head-imgtwo'><image src='http://image.quku199.com/personal/personal-left.png'></image></view>
+      </view>
+    </view>
+    <view class='personal-second'>
+      <view class='personal-second-name'>昵称</view>
+      <view class='personal-second-right'>
+        <view class='personal-second-text'>{{PersonalName}}</view>
+        <view class='personal-second-right-img'>
+          <image src='http://image.quku199.com/personal/personal-left.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='personal-second' bindtap='UpdateUserPhone'>
+      <view class='personal-second-name'>电话</view>
+      <view class='personal-second-right'>
+        <view class='personal-second-text'>{{PersonalPhone}}</view>
+        <view class='personal-second-right-img'>
+          <image src='http://image.quku199.com/personal/personal-left.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='personal-second' bindtap='Sex' data-sex='1'>
+      <view class='personal-second-name'>性别</view>
+      <view class='personal-second-right'>
+        <view class='personal-second-text'>{{sex}}</view>
+        <view class='personal-second-right-img'>
+          <image src='http://image.quku199.com/personal/personal-left.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='personal-second'>
+      <view class='personal-second-name'>生日</view>
+      <view class='personal-second-right'>
+        <view class='personal-second-text'>
+          <view class="section">
+            <picker mode="date" value="{{date}}" start="1950-01-01" end="2030-01-01" bindchange="bindDateChange">
+              <view class="picker">
+                {{date}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class='personal-second-right-img'>
+          <image src='http://image.quku199.com/personal/personal-left.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='publish_btn' catchtap='submitComment'><view>确认修改</view></view>
+
+
+<view class='personal-pop' wx:if="{{sexShow}}" >
+  <view class='personal-bottom'>
+    <view class='personal-bottom-head'>
+      <view class='personal-bottom-head-one'>请选择</view>
+      <view class='personal-bottom-head-two' data-sex='0' bindtap='Sex' data-sexnum='0'>男</view>
+      <view class='personal-bottom-head-two' data-sex='0' bindtap='Sex' data-sexnum='1'>女</view>
+    </view>
+    <view class='personal-bottom-btm' data-sex='0' bindtap='Sex'>取消</view>
+  </view>
+</view>

@@ -1,0 +1,128 @@
+<view class="hs_header">
+  <view class='hs_body'>
+    <view class='hs_header_title'>
+      <view>加入趣开心</view>
+      <text>平台大优势强 收入有保障</text>
+    </view>
+    <view class='hs_header_list'>
+      <view class='hs_header_list_text'>
+        <view class='hs_header_list_text1'><text>{{enterNum}}</text>万</view>
+        <view class='hs_header_list_text2'>入驻商家</view>
+      </view>
+      <view class='hs_header_list_text'>
+        <view class='hs_header_list_text1'><text>{{enterNum1}}</text>万</view>
+        <view class='hs_header_list_text2'>日均订单</view>
+      </view>
+      <view class='hs_header_list_text'>
+        <view class='hs_header_list_text1'><text>{{enterNum2}}</text>亿</view>
+        <view class='hs_header_list_text2'>平台用户</view>
+      </view>
+    </view>
+    <view class='hs_header_btn'>立即开店</view>
+  </view>
+  <view class='hs_header_bg'><image src='http://image.quku199.com/enter/header_bg.png'></image></view>
+</view>
+
+<view class='hs_tab'>
+  <view class='hs_tab_title'>
+    <view class='hs_tab_titles {{tabIndex == 0 ? "active" : ""}}' data-id='0' bindtap='tableFn'>
+      <view>开店流程</view><text></text>
+    </view>
+    <view class='hs_tab_titles {{tabIndex == 1 ? "active" : ""}}' data-id='1' bindtap='tableFn'>
+      <view>开店要求</view><text></text>
+    </view>
+    <view class='hs_tab_titles {{tabIndex == 2 ? "active" : ""}}' data-id='2' bindtap='tableFn'>
+      <view>常见问题</view><text></text>
+    </view>
+  </view>
+  <view class='hs_tab_centent'>
+    
+    <view class='hs_tab_centent_flow {{tabIndex == 0 ? "active" : ""}}'>
+      <view class='hs_tab_centent_flow_view'>
+        <view class='hs_tab_centent_flow_view_img'>
+          <view class='hs_tab_centent_flow_view_img1'><image src='http://image.quku199.com/enter/icon_download.png'></image></view>
+          <view class='hs_tab_centent_flow_view_x'></view>
+        </view>
+        <view class='hs_tab_centent_flow_view_text'>
+          <view class='hs_tab_centent_flow_view_text_title'>1.下载APP</view>
+          <view class='hs_tab_centent_flow_view_text_text'>下载趣开心商家端APP</view>
+          <view class='hs_tab_centent_flow_view_text_text'>完成商家账号注册</view>
+        </view>
+      </view>
+
+      <view class='hs_tab_centent_flow_view'>
+        <view class='hs_tab_centent_flow_view_img'>
+          <view class='hs_tab_centent_flow_view_img2'><image src='http://image.quku199.com/enter/icon_uploading.png'></image></view>
+          <view class='hs_tab_centent_flow_view_x'></view>
+        </view>
+        <view class='hs_tab_centent_flow_view_text'>
+          <view class='hs_tab_centent_flow_view_text_title'>2.上传资料</view>
+          <view class='hs_tab_centent_flow_view_text_text'>下载趣开心商家端APP</view>
+          <view class='hs_tab_centent_flow_view_text_text'>完成商家账号注册</view>
+        </view>
+      </view>
+
+      <view class='hs_tab_centent_flow_view'>
+        <view class='hs_tab_centent_flow_view_img'>
+          <view class='hs_tab_centent_flow_view_img3'><image src='http://image.quku199.com/enter/icon_audit.png'></image></view>
+          <view class='hs_tab_centent_flow_view_x'></view>
+        </view>
+        <view class='hs_tab_centent_flow_view_text'>
+          <view class='hs_tab_centent_flow_view_text_title'>3.审核预约</view>
+          <view class='hs_tab_centent_flow_view_text_text'>下载趣开心商家端APP</view>
+          <view class='hs_tab_centent_flow_view_text_text'>完成商家账号注册</view>
+        </view>
+      </view>
+
+      <view class='hs_tab_centent_flow_view'>
+        <view class='hs_tab_centent_flow_view_img'>
+          <view class='hs_tab_centent_flow_view_img4'><image src='http://image.quku199.com/enter/icon_accomplish.png'></image></view>
+          <view class='hs_tab_centent_flow_view_x'></view>
+        </view>
+        <view class='hs_tab_centent_flow_view_text'>
+          <view class='hs_tab_centent_flow_view_text_title'>4.开店营业</view>
+          <view class='hs_tab_centent_flow_view_text_text'>下载趣开心商家端APP</view>
+          <view class='hs_tab_centent_flow_view_text_text'>完成商家账号注册</view>
+        </view>
+      </view>
+
+    </view>
+  
+    <view class='hs_tab_centent_textbox hs_require {{tabIndex == 1 ? "active" : ""}}'>
+      <view class='hs_tab_centent_textbox_text'>
+        <view class='hs_tab_centent_textbox_text_title'>1、门店要求</view>
+        <view class='hs_tab_centent_textbox_text_text'>入驻趣开心平台，必须是真实的线下门店，有经营相关证件；</view>
+      </view>
+      <view class='hs_tab_centent_textbox_text'>
+        <view class='hs_tab_centent_textbox_text_title'>2、资料齐全</view>
+        <view class='hs_tab_centent_textbox_text_text'>须提供营业执照、行业经营许可证、身份证照片信息；</view>
+      </view>
+      <view class='hs_tab_centent_textbox_text'>
+        <view class='hs_tab_centent_textbox_text_title'>3、品类范围</view>
+        <view class='hs_tab_centent_textbox_text_text'>须提供营业执照、行业经营许可证、身份证照片信息；</view>
+      </view>
+
+    </view>
+
+
+    <view class='hs_tab_centent_textbox hs_question {{tabIndex == 2 ? "active" : ""}}'>
+      <view class='hs_tab_centent_textbox_text'>
+        <view class='hs_tab_centent_textbox_text_title'>1、有工作人员可以帮忙或咨询吗？</view>
+        <view class='hs_tab_centent_textbox_text_text'>入驻趣开心平台，必须是真实的线下门店，有经营相关证件；</view>
+      </view>
+      <view class='hs_tab_centent_textbox_text'>
+        <view class='hs_tab_centent_textbox_text_title'>2、资料齐全</view>
+        <view class='hs_tab_centent_textbox_text_text'>须提供营业执照、行业经营许可证、身份证照片信息；</view>
+      </view>
+      <view class='hs_tab_centent_textbox_text'>
+        <view class='hs_tab_centent_textbox_text_title'>3、品类范围</view>
+        <view class='hs_tab_centent_textbox_text_text'>须提供营业执照、行业经营许可证、身份证照片信息；</view>
+      </view>
+
+    </view>
+
+  </view>
+</view>
+
+
+<view class='hs_btn'><view>立即开店</view></view>

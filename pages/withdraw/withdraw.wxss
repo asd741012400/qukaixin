@@ -1,0 +1,451 @@
+/* pages/withdraw/withdraw.wxss */
+
+page {
+  background-color: #e5e5e5;
+}
+
+.withdraw {
+  width: 750rpx;
+  height: 100%;
+}
+
+.withdraw-head {
+  margin-top: 20rpx;
+  background-color: #fff;
+  height: 181rpx;
+}
+
+.withdraw-head-center {
+  width: 702rpx;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.withdraw-head-center-top {
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #e5e5e5;
+  align-items: center;
+}
+
+.withdraw-head-center-top-name {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.withdraw-head-center-top-input {
+  margin-left: 58rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.withdraw-head-center-bottom {
+  height: 90rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.withdraw-head-center-bottom-name {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.withdraw-head-center-bottom-text {
+  color: #fd8137;
+  font-size: 24rpx;
+}
+
+.withdraw-second {
+  width: 750rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.withdraw-second-center {
+  width: 702rpx;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.withdraw-second-center-top {
+  height: 90rpx;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.withdraw-second-center-bottom {
+  height: 119rpx;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.withdraw-second-center-bottom-img {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.withdraw-second-center-bottom-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.withdraw-second-center-bottom-second {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24rpx;
+  width: 500rpx;
+}
+
+.withdraw-second-center-bottom-second-top {
+  color: #333;
+  font-size: 26rpx;
+}
+
+.withdraw-second-center-bottom-second-btm {
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 6rpx;
+}
+
+.withdraw-second-center-bottom-imgs {
+  width: 36rpx;
+  height: 37rpx;
+  margin-left: 80rpx;
+}
+
+.withdraw-second-center-bottom-imgs image {
+  width: 100%;
+  height: 100%;
+}
+
+.withdraw-three {
+  width: 702rpx;
+  height: 80rpx;
+  background-image: linear-gradient(-90deg, #fd8137 0%, #fdc337 100%);
+  box-shadow: 0px 3px 7px 0px rgba(253, 129, 55, 0.35);
+  opacity: 0.5;
+  border-radius: 40px;
+  margin: 0 auto;
+  margin-top: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+}
+
+.AAAactive {
+  opacity: 1
+}
+
+.withdraw-four {
+  margin-top: 20rpx;
+  background-color: #fff;
+  width: 750rpx;
+  height: 180rpx;
+}
+
+.withdraw-four-center {
+  width: 702rpx;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.withdraw-four-center-top {
+  height: 90rpx;
+  border-bottom: 1px solid #e5e5e5;
+  align-items: center;
+  display: flex;
+  font-size: 28rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.withdraw-four-center-bottom {
+  height: 90rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.withdraw-four-center-bottom-left {
+  color: rgba(102, 102, 102, 1);
+  font-size: 26rpx;
+}
+
+.withdraw-four-center-bottom-right {
+  width: 9rpx;
+  height: 18rpx;
+}
+
+.withdraw-four-center-bottom-right image {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.withdraw-second-center-bottom-text {
+  width: 120rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  height: 30rpx;
+  align-items: center;
+}
+
+.withdraw-second-center-bottom-text-left {
+  color: rgba(102, 102, 102, 1);
+  font-size: 24rpx;
+}
+
+.withdraw-second-center-bottom-text-right {
+  width: 9rpx;
+  height: 18rpx;
+}
+
+.withdraw-second-center-bottom-text-right image {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+/* 弹窗 */
+
+/* 提现支付宝 */
+
+.withdraw-pop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.withdraw-pop-Bbox {
+  width: 600rpx;
+  height: 450rpx;
+  margin: 0 auto;
+  margin-top: 330rpx;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.withdraw-pop-Bbox-head {
+  height: 360rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.withdraw-pop-Bbox-head-img {
+  width: 86rpx;
+  height: 86rpx;
+}
+
+.withdraw-pop-Bbox-head-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.withdraw-pop-Bbox-head-second {
+  letter-spacing: 2rpx;
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 40rpx;
+}
+
+.withdraw-pop-Bbox-head-three {
+  color: #666;
+  font-size: 28rpx;
+  margin-top: 6rpx;
+}
+
+.withdraw-pop-Bbox-bottom {
+  height: 89rpx;
+  display: flex;
+  flex-direction: row;
+  color: #999;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* 选择到账时间 */
+
+.withdraw-time {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.withdraw-time-box {
+  width: 640rpx;
+  height: 540rpx;
+  margin: 360rpx auto 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+}
+
+.withdraw-time-box-top {
+  width: 600rpx;
+  height: 90rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.withdraw-time-box-top-left {
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.withdraw-time-box-top-right {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.withdraw-time-box-top-right image {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.withdraw-time-box-body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 600rpx;
+  height: 90rpx;
+  border-top: 1px solid #e5e5e5;
+}
+
+.withdraw-time-box-body-left {
+  color: rgba(102, 102, 102, 1);
+  font-size: 26rpx;
+}
+
+.withdraw-time-box-body-right {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.withdraw-time-box-body-right image {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.withdraw-details {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.withdraw-details-box {
+  width: 640rpx;
+  height: 360rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+}
+
+.withdraw-details-box-top {
+  width: 600rpx;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.withdraw-details-box-body {
+  width: 600rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.withdraw-details-box-body text {
+  color: rgba(153, 153, 153, 1);
+  margin-right: 6rpx;
+}
+
+.withdraw-details-box-body-left {
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.withdraw-details-box-body-right {
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.withdraw-details-box-bottom {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #e5e5e5;
+}
+
+.withdraw-details-box-bottom-left {
+  width: 319rpx;
+  height: 89rpx;
+  border-right: 1px solid #e5e5e5;
+  text-align: center;
+  line-height: 89rpx;
+  font-size: 28rpx;
+}
+
+.withdraw-details-box-bottom-right {
+  width: 320rpx;
+  height: 89rpx;
+  text-align: center;
+  color: rgba(253, 129, 55, 1);
+  font-size: 28rpx;
+  line-height: 89rpx;
+}

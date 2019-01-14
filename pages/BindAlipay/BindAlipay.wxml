@@ -1,0 +1,21 @@
+<view class='container'>
+  
+
+  <view class='NewPhone'>
+    <view class='verification'>  
+    <view class='verification-input'>
+      <image class='verification-ico-phone' src='{{img}}'></image>
+      <input type='text' placeholder='请输入支付宝账号'>{{inputvalue}}</input>
+    </view>    
+  </view>
+
+  <view class='verification'>  
+    <view class='verification-input'>
+      <image class='verification-ico-phone' src='{{img2}}'></image>
+      <input type='text' placeholder='请输入姓名'>{{inputname}}</input>
+    </view>    
+  </view>
+  
+  </view>
+  <view class='BindNext' bindtap='toastFun'>确定</view>
+</view>

@@ -1,0 +1,122 @@
+<!--pages/confirm/confirm.wxml-->
+
+<view class='confirm-Head'>
+  <view class='confirm-head'>
+    <view class='confirm-head-first'>请选择购买时间</view>
+    <view class='confirm-head-second'>
+
+      <block wx:for="{{DdateTime}}" wx:key="unique">
+
+        <view class='confirm-head-second-two {{tabIndex == index?"active":""}}' bindtap='checkTime' data-index="{{index}}" style="background:{{item.dataBackground}}" data-id='{{item.Pid}}'>
+        
+          <view class='confirm-head-second-date' >
+           {{item.Month}} 个月 
+           </view>
+          <view class='confirm-head-second-money'>
+          ￥<text> {{item.Price}} </text>          
+           </view>
+        </view>
+
+      </block>
+     
+    </view>
+  </view>
+</view>
+
+<view class='confirm-second'>
+  <view class='confirm-second-one'>
+    <view>支付金额</view>
+    <view>￥
+      <text>{{clickMoney}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='pay-second'>
+    <view class='confirm-three-one'>
+    <view class='confirm-three-head'>请选择支付方式</view>
+    <view class='confirm-three-second'>
+      <view class='confirm-three-second-head' bindtap='selectedSwitch' data-index='0'>
+        <view class='confirm-three-second-head-content'>
+          <view class='confirm-three-second-head-content-one'>
+            <image src='http://image.quku199.com/confirm/confirm-Rmb.png'></image>
+          </view>
+          <view class='confirm-three-second-head-content-two'>
+            <view class='confirm-three-second-head-content-two-head'>余额（剩余 ￥
+              <text>{{payMoney}}</text>）</view>
+            <view class='confirm-three-second-head-content-two-bottom'>余额不足，请选择以下支付方式</view>
+          </view>
+          <view class='confirm-three-second-head-content-three'>
+            <image wx:if="{{selectedSwitch == 0}}" src='http://image.quku199.com/confirm/confirm-QQ.png'></image>
+            <image wx:else src='http://image.quku199.com/confirm/confirm-QQ1.png'></image>
+          </view>
+        </view>
+      </view>
+
+
+      <view class='confirm-three-second-bottom' bindtap='selectedSwitch' data-index='1'>
+        <view class='confirm-three-second-head-content'>
+          <view class='confirm-three-second-head-content-one'>
+            <image src='http://image.quku199.com/confirm/confirm-wechat.png'></image>
+          </view>
+          <view class='confirm-three-second-head-content-two'>
+            <view class='confirm-three-second-head-content-two-head'>微信</view>
+            <view class='confirm-three-second-head-content-two-bottom'>推荐安装微信5.0及以上的用户使用</view>
+          </view>
+          <view class='confirm-three-second-head-content-three'>
+            <image wx:if="{{selectedSwitch == 1}}" src='http://image.quku199.com/confirm/confirm-QQ.png'></image>
+            <image wx:else src='http://image.quku199.com/confirm/confirm-QQ1.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='confirm-bottom' bindtap='GouMai' style='{{prevent?"transparency":""}}'>确认购买</view>
+
+<view class='confirm-pop-up-succeed' wx:if="{{payOrNot == 1}}">
+  <view class='confirm-pop-white'>
+    <view class='confirm-pop-white-head'>
+      <image src='http://image.quku199.com/confirm/confirm-succeed.png'></image>
+      <view>支付成功</view>
+      <view>恭喜你成为趣开心银卡会员</view>
+    </view>
+    <view class='confirm-pop-white-bottom'>
+      <view class='confirm-pop-white-bottom-left' catchtap='closePopFun'>取消</view>
+      <view class='confirm-pop-white-bottom-right' bindtap='urlFun'>去领劵</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='confirm-pop-up-error' wx:elif="{{payOrNot == 2}}">
+  <view class='confirm-pop-white'>
+    <view class='confirm-pop-white-head'>
+      <image src='http://image.quku199.com/Free-Volume-List/icon_err.png'></image>
+      <view>支付失败</view>
+      <view>一不小心就支付失败了</view>
+    </view>
+    <view class='confirm-pop-white-bottom'>
+      <view class='confirm-pop-white-bottom-left' catchtap='closePopFun'>取消</view>
+      <view class='confirm-pop-white-bottom-right' bindtap='GouMai'>重新支付</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='confirm-pop-up-note' wx:if="{{phone}}">
+  <view class='confirm-pop-up-note-all' style="bottom:{{phoneBottom}}rpx;">
+    <view class='confirm-pop-up-note-all-head'>
+    <view bindtap='closePopFun2'>
+      <image src='http://image.quku199.com/confirm/cuoWu.png'></image>
+    </view>
+    <text>请输入短信验证码</text>
+  </view>
+  <view class='confirm-pop-up-note-all-second'>已发送验证码至<text>{{userPhone}}</text></view>
+  <view class='confirm-pop-up-note-all-three'>
+    <input type='number' placeholder='请输入验证码' bindfocus="bindButtonTap" bindblur="bindblurs" maxlength='6' bindinput='recordPass'></input>
+    <button class='verification-bottom' disabled='{{inputDisabled}}' data-id="2" bindtap="getVerificationCode">{{time}}</button>
+  </view>
+  <button class='confirm-pop-up-note-all-four' style="{{affirm?'opacity: 1':'opacity: 0.5'}}" catchtap='verificationInfo'>确认买单</button>
+  </view>
+</view>

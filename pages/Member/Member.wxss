@@ -1,0 +1,136 @@
+/* pages/membership/membership.wxss */
+.membership-head{
+  width: 620rpx;
+  height: 340rpx;
+  margin: 30rpx auto 0;
+	border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(35deg,#68492f 0%,#a5866d 100%);
+}
+.membership-head-one{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 40rpx;
+  width: 540rpx;
+  margin-left: 40rpx;
+}
+.membership-head-one-left{
+  color: #ffffff;
+  letter-spacing:3rpx;
+  font-size: 40rpx; 
+  font-family: hzgb;
+  font-weight: normal;
+	font-stretch: normal;
+}
+.membership-head-one-right{
+  color: #573317;
+  font-size: 26rpx;
+}
+.membership-head-one-right text{
+  margin-left: 20rpx;
+}
+.membership-head-two{
+  margin-left: 40rpx;
+  margin-top: 23rpx;
+  letter-spacing: 2px;
+	color: #ffffff;
+  font-size: 26rpx;
+}
+.membership-head-three{
+  margin-left: 40rpx;
+  margin-top: 130rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+}
+.membership-body{
+  width: 620rpx;
+  height: 570rpx;
+  margin: 51rpx auto 0;
+  flex-direction: column;
+  display: flex
+}
+.membership-body-head{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.membership-body-head image{
+  width: 190rpx;
+  height: 6rpx;
+}
+.membership-body-head-word{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  color: #333333;
+  font-size: 30rpx;
+}
+.membership-body-second{
+  margin-top: 80rpx;
+  height: 460rpx;
+  flex-direction: column;
+  display: flex;
+}
+.membership-body-second-first{
+    height: 70rpx;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 62rpx;
+}
+.membership-body-second-first image{
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 30rpx;
+}
+.membership-body-second-first-right{
+  display: flex;
+  flex-direction: column;
+}
+.membership-body-second-first-right text{
+  letter-spacing: 2rpx;
+	color: #666666;
+  font-size: 26rpx;
+}
+.membership-foot{
+  width: 750rpx;
+  height: 98rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background: #fff;
+}
+.membership-foot-left{
+  width: 450rpx;
+  height: 98rpx;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.membership-foot-price{
+  color: #f03e3e;
+  margin-left: 31rpx;
+  font-size: 24rpx;
+}
+.membership-foot-price text{
+  font-size: 32rpx;
+}
+.membership-foot-cost{
+  color: #999999;
+  font-size: 24rpx;
+  margin-left: 27rpx;
+  text-decoration:line-through;
+}
+.membership-foot-right{
+  width: 299rpx;
+  text-align: center;
+  line-height: 98rpx;
+  height: 98rpx;
+  background-color: #bf966a;
+  color: #ffffff;
+  font-size: 30rpx;
+}

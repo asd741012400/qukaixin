@@ -1,0 +1,82 @@
+
+<view class='banner'>
+  <swiper class='food-banner' autoplay='true' indicator-dots='true' indicator-active-color='#fff' interval='5000'>
+    <swiper-item wx:for="{{bannerImg}}" wx:key="unique">
+      <view data-url='{{item.ReturnUrl}}'><image src='{{item.ImageThumbnailUrl}}'></image></view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class='food-title'>
+  <view class='food-TJ'>
+    <image class='food-TJL' src='http://image.quku199.com/images-food/food-TJL.png'></image>
+    <view class='food-TJtitle'>推荐商家</view>
+    <image class='food_TJR' src='http://image.quku199.com/images-food/food-TJR.png'></image>
+  </view>
+</view>
+<view class='food-Tjimage-a'>
+  <view class='food-xsj' wx:for="{{recommend}}" wx:key="unique" data-id='{{item.BusinessID}}' bindtap='urlFun' data-url='shopDetails'>
+    <image src='{{item.HeadImageUrl}}'></image>
+    <text>{{item.BusinessName}}</text>
+  </view>
+
+</view>
+
+<view class='food-ZT'>
+  <view class='food-coupon' bindtap='urlFun' data-url='merchant-details' wx:for="{{couponList}}" wx:key="unique" data-id='{{item.CouponID}}' wx:if="{{item.state == 1}}">
+    <view class='food-coupon-left'>
+      <image class='food-coupon-image' src='{{item.CouponImageUrl}}'></image>
+      <image wx:if="{{item.MaxIntegral <= 0}}" class='food-coupon-charge' src='http://image.quku199.com/images-food/foot-charge.png'></image>
+      <image wx:else class='food-coupon-charge' src='http://image.quku199.com/images-food/food-integral.png'></image>
+    </view>
+    <view class='food-coupon-content'>
+      <view class='cp-content-name'>{{item.CouponName}}</view>
+      <view class='cp-content-address'>
+        <view>
+          <image class='cp-content-DW' src='http://image.quku199.com/images-food/food-DW.png'></image>
+        </view>
+        <view class='cp-content-add'>{{item.Adress}}</view>
+      </view>
+      <view class='cp-content-get'>已领
+        <text>{{item.ReceiveCount}}</text>张</view>
+    </view>
+    <view class='food-coupon-SX'>
+      <image src='http://image.quku199.com/images-food/food-DD.png'></image>
+    </view>
+    <view class='food-coupon-right'>
+      <view class='food-coupon-num'>
+        <text>{{item.MaxIntegral}}</text>积分</view>
+      <view class='food-coupon-LJ' catchtap='getDiscount' data-id='{{item.CouponID}}'>立即领券</view>
+    </view>
+  </view>
+
+</view>
+
+<view class='hs_popBg' wx:if="{{popShow}}">
+  <view class='hs_pop_content'>
+      <view class='hs_pop' wx:if="{{popStateShow}}">
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_succes.png'></image></view>
+      <view class='hs_pop_text1'>领取成功</view>
+      <view class='hs_pop_text2'>请在免费券有效期以内去使用</view>
+      <view class='hs_pop_btn'>
+        <text catchtap='popShow'>取消</text>
+        <text catchtap='urlFun' data-url='free-details'>去使用</text>
+      </view>
+    </view>  
+      <view class='hs_pop' wx:else>
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_err.png'></image></view>
+      <view class='hs_pop_text1'>领取失败</view>
+      <view class='hs_pop_text2'>{{popMsg}}</view>
+      <view class='hs_pop_btn'>
+        <view catchtap='popShow'>确定</view>
+      </view>
+    </view>  
+  </view>
+</view>
+
+
+
+
+
+
+
+  

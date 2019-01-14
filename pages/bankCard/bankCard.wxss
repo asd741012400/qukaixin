@@ -1,0 +1,112 @@
+/* pages/bankCard/bankCard.wxss */
+page{
+  background-color: #f2f2f2;
+}
+
+.bankCard{
+  width: 702rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  background-color: #ffffff;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bankCard-img{
+  width: 125rpx;
+  height: 86rpx;
+  margin-left: 60rpx;
+}
+.bankCard-img image{
+  width: 100%;
+  height: 100%;
+}
+.bankCard-right{
+  height: 70rpx;
+  margin-left: 50rpx;
+  display: flex;
+  flex-direction: column;
+}
+.bankCard-right-one{
+  color: #666666;
+  font-size: 26rpx;
+}
+.bankCard-right-two{
+  color: #999999;
+  font-size: 22rpx;
+  margin-top: 7rpx;
+}
+.bankCard-bottom{
+  width: 702rpx;
+  height: 80rpx;
+  background-color: #fd8137;
+  border-radius: 10rpx;
+  margin: 70rpx auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 30rpx;
+}
+
+
+
+
+
+.AllbankCard-head{
+  width: 702rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  background-color: #ffffff;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+.AllbankCard-head-top{
+  height: 66rpx;
+  margin-top: 37rpx;
+  width: 300rpx;
+  margin-left: 37rpx;
+  align-items: center;
+  display: flex;
+}
+.AllbankCard-head-top-img{
+  width: 47rpx;
+  height: 49rpx;
+}
+.AllbankCard-head-top-img image{
+  width: 100%;
+  height: 100%;
+}
+.AllbankCard-head-top-right{
+  margin-left: 42rpx;
+  display: flex;
+  flex-direction: column;
+}
+.AllbankCard-head-top-right-one{
+  color: #666666;
+  font-size: 28rpx;
+}
+.AllbankCard-head-top-right-two{
+  color: #999999;
+  font-size: 24rpx;
+}
+.AllbankCard-head-bottom{
+  font-size: 26rpx;
+  color: #666666;
+  margin-left: 126rpx;
+  margin-top: 39rpx;
+}
+.AllbankCard-bottom{
+  width: 702rpx;
+  height: 80rpx;
+  background-color: #fd8137;
+  border-radius: 10rpx;
+  margin: 70rpx auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 30rpx;
+}

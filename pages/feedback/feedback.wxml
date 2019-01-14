@@ -1,0 +1,6 @@
+<!--pages/feedback/feedback.wxml-->
+<view class='feedback'>
+  <textarea class='feedback-head' placeholder='请输入您的意见和建议，工作人员将会在第一时间评估处理。感觉您的热心反馈！' bindinput="f1"   maxlength='200' value='{{text}}'></textarea>
+  <text class='feedback-bottom'>{{num}}/200</text>
+</view>
+<view class='feedback-second {{opacity?"active":""}}' bindtap='present' >提交</view>

@@ -1,0 +1,59 @@
+<!--pages/bindBankcard/bindBankcard.wxml-->
+<!-- <view class='bindBank' wx:if="{{next==0}}">
+  <view class='bindBank-head'>
+    <text>请绑定持卡人本人的银行卡</text>
+  </view>
+  <view class='bindBank-body'>
+    <view class='bindBank-body-content'>
+      <view class='bindBank-body-content-top'>
+        <view class='bindBank-body-content-top-one'>持卡人</view>
+        <view class='bindBank-body-content-top-two'><input placeholder='请输入姓名' bindinput='name'></input></view>
+      </view>
+      <view class='bindBank-body-content-bottom'>
+        <view class='bindBank-body-content-bottom-one'>身份证</view>
+        <view class='bindBank-body-content-bottom-two'><input placeholder='请输入您的身份证号码' bindinput='card'></input></view>
+      </view>
+    </view>
+  </view>
+  <view class='bindBank-three'>
+    <view class='bindBank-three-content'>
+    <view class='bindBank-three-content-one'>卡号</view>
+    <view class='bindBank-three-content-two'><input placeholder='请输入银行卡卡号' type='number' bindinput='bankCard'></input></view>
+    </view>
+  </view>
+  <view class='bindBank-bottom' bindtap='nextSure'>下一步</view>
+</view> -->
+
+
+
+
+
+<!-- 另一张 -->
+<view class='SbindBank' >
+  <view class='SbindBank-head'>
+    <text>请绑定持卡人本人的银行卡</text>
+  </view>
+  <view class='bindBank-body'>
+    <view class='bindBank-body-content'>
+      <view class='bindBank-body-content-top'>
+        <view class='bindBank-body-content-top-one'>持卡人</view>
+        <view class='bindBank-body-content-top-two'><input placeholder='请输入姓名' bindinput='name'></input></view>
+      </view>
+      <view class='SbindBank-body-content-bottom'>
+        <view class='SbindBank-body-content-bottom-one'>身份证</view>
+        <view class='SbindBank-body-content-bottom-two'><input placeholder='请输入您的身份证号码' bindinput='card'></input></view>
+      </view>
+    </view>
+  </view>
+  <view class='SbindBank-four'>
+    <view class='SbindBank-four-center'>
+      <view class='SbindBank-four-center-one'>卡号</view>
+      <view class='SbindBank-four-center-two'><input placeholder='请输入银行卡卡号' type='number' bindinput='bankCard'></input></view>
+    </view>
+  </view>
+  <view class='SbindBank-three'>
+    <view class='SbindBank-three-img'><image src='{{bankImg}}'></image></view>
+    <view class='SbindBank-three-right'>{{BankName}}</view>
+  </view>
+  <button class='SbindBank-bottom {{Isdisabled?"bottomActive":""}}'  bindtap='tiaozhuan'  >下一步</button>
+</view>

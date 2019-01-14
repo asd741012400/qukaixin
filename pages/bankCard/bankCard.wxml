@@ -1,0 +1,28 @@
+<!--pages/bankCard/bankCard.wxml-->
+<view class='WbankCard' wx:if="{{show==0}}">
+  <view class='bankCard'>
+    <view class='bankCard-img'><image src='http://image.quku199.com/bankCard/bankcard.png'></image></view>
+    <view class='bankCard-right'>
+      <text class='bankCard-right-one'>您暂未绑定银行卡</text>
+      <text class='bankCard-right-two'>快去绑定银行卡吧！</text>
+    </view>
+  </view>
+  <view class='bankCard-bottom' bindtap='urlFun' data-url='bindBankcard'>绑定银行卡</view>
+</view>
+
+
+
+
+<view class='AllbankCard' wx:else>
+  <view class='AllbankCard-head'>
+    <view class='AllbankCard-head-top'>
+      <view class='AllbankCard-head-top-img'><image src='{{backCardDetails.BankiconUrl}}'></image></view>
+      <view class='AllbankCard-head-top-right'>
+        <text class='AllbankCard-head-top-right-one'>{{backCardDetails.BankName}}</text>
+        <text class='AllbankCard-head-top-right-two'>{{backCardDetails.cardtype}}</text>
+      </view>
+    </view>
+    <view class='AllbankCard-head-bottom'><text>{{backCardDetails.BankCardNumber}}</text></view>
+  </view>
+  <view class='AllbankCard-bottom' bindtap='urlFun' data-url='bindBankcard'>更改银行卡</view>
+</view>

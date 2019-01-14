@@ -1,0 +1,59 @@
+.hs_tab .hs_tab_title{
+  display: flex;
+  font-size: 26rpx;
+  color: #666666;
+  height: 80rpx;
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+}
+.hs_tab .hs_tab_title .hs_tab_titles{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hs_tab .hs_tab_title .hs_tab_titles .hs_tab_titles_text{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hs_tab .hs_tab_title .hs_tab_titles .hs_tab_titles_text view{
+  height: 36rpx;
+  border-right: 1px solid #e5e5e5;
+  flex: 1;
+}
+
+.hs_tab .hs_tab_title .titleActive{
+  color: #fd8137;
+}
+.hs_tab .hs_tab_title .titleActive text{
+  display: block;
+  width: 100rpx;
+  height: 2px;
+  background: #fd8137
+}
+
+.hs_tab .hs_tab_centent{
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+.hs_tab .hs_tab_centent .hs_tab_centent_text{
+  display: none;
+}
+.hs_tab .hs_tab_centent .cententActive{
+  display: block;
+}
+.hs_tab .hs_tab_centent .hs_tab_centent_text .hs_tab_centent_text_list{
+  padding: 38rpx 0 50rpx;
+  line-height: 42rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.hs_tab .hs_tab_centent .hs_tab_centent_text .hs_tab_centent_text_list .hs_tab_centent_text_list_title{
+  padding-bottom: 20rpx;
+}

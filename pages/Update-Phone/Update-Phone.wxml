@@ -1,0 +1,17 @@
+<view class='container'>
+  <view class='Upphone'>更换手机号码后，下次登录可使用新手机号码登录。 当前手机号码：
+    <label>{{UserPhone}}</label>
+  </view>
+
+  <view class='verification'>
+    <view class='verification-input'>
+      <image class='verification-ico' src='{{img}}'></image>
+      <input type='text' placeholder='请输入验证码' bindinput="pass">{{inputcode}}</input>
+    </view>
+    <!-- <view class='verification-bottom' disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode">{{item}}</view> -->
+    <button class='verification-bottom' disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode">
+      {{time}}
+    </button>
+  </view>
+  <view class='BindNext' bindtap='bindSure'>下一步</view>
+</view>

@@ -1,0 +1,46 @@
+<!--pages/membership/membership.wxml-->
+<view class='membership'>
+
+ <!-- 会员详情 -->
+  <view class='membership-head'>
+    <view class='membership-head-one'>
+      <text class='membership-head-one-left'>趣开心</text>
+      <!-- <view class='membership-head-one-right'>ID<text>{{membership.ReferralCode}}</text></view> -->
+    </view>
+    <view class='membership-head-two'>{{membership.LevelTypeName}}</view>
+    <!-- <view class='membership-head-three'>有效期至：<text>{{membership.EndTime}}</text></view> -->
+  </view>
+  <view class='membership-body'>
+    <view class='membership-body-head'>
+      <image src='http://image.quku199.com/Member/xian2.png'></image>
+      <view class='membership-body-head-word'>{{membership.LevelTypeName}}权益</view>
+      <image src='http://image.quku199.com/Member/xian1.png'></image>
+    </view>
+
+    <!-- 权益详情 -->
+    <view class='membership-body-second'>
+      <view class='membership-body-second-first' wx:for="{{membership._list}}">
+        <image src='{{item.IconImageUrl}}'></image>
+        <view class='membership-body-second-first-right'>
+          <text>{{item.InterestsTitle}}</text>
+          <text>{{item.InterestsDesc}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 会员权益 -->
+    <view class='membership-foot'>
+      <view class='membership-foot-left'>
+      <view class='membership-foot-price'>
+        ￥<text>{{membership.Price}}</text>/月
+      </view>
+      <view class='membership-foot-cost'>
+        原价:￥<text>{{membership.MarketPrice}}</text>/月
+      </view>
+      </view>
+      <view class='membership-foot-right' bindtap='PayVip'>购买会员</view>
+    </view>
+
+
+</view>

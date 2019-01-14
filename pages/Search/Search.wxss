@@ -1,0 +1,80 @@
+/* pages/seek/seek.wxss */
+
+.search-head{
+  height: 90rpx;
+  width: 750rpx;
+}
+.search-head-center{
+  height: 100%;
+  margin: 0 auto;
+  width: 702rpx;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search-head-center-one{
+  width: 25rpx;
+  height: 26rpx;
+  position: relative;
+}
+.search-head-center-one image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.search-head-center-second{
+  margin-left: 14rpx;
+  font-size: 24rpx;
+  width: 350rpx;
+  color: #999999;
+}
+.search-head-center-three{
+  width: 23rpx;
+  height: 23rpx;
+  position: relative;
+  margin-left: 180rpx;
+}
+.search-head-center-three image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.search-head-center-four{
+	width: 1rpx;
+	height: 40rpx;
+	background-color: #e5e5e5;
+  margin-left: 26rpx;
+}
+.search-head-center-five{
+  color: #fd8137;
+  font-size: 28rpx;
+  margin-left: 21rpx;
+}
+.search-second{
+  width: 750rpx;
+}
+.search-second-center{
+  width: 702rpx;
+  margin: 0 auto;
+  height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.search-second-center-one{
+  width: 25rpx;
+  height: 26rpx;
+  position: relative;
+}
+.search-second-center-one image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.search-second-center-two{
+  font-size: 26rpx;
+  color: #666666;
+  margin-left: 30rpx;
+}

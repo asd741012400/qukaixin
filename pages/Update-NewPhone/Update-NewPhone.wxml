@@ -1,0 +1,25 @@
+<view class='container'>
+  
+
+  <view class='NewPhone'>
+    <view class='verification'>  
+    <view class='verification-input newPhoneStyle'>
+      <image class='verification-ico-phone' src='{{imgphone}}'></image>
+      <input type='number'  placeholder='请输入新手机号码' maxlength="11" bindinput="vla"></input>
+    </view>    
+  </view>
+
+  <view class='verification1'>  
+    <view class='verification-input'>
+      <image class='verification-ico' src='{{imgNote}}'></image>
+      <input type='number' placeholder='请输入验证码' maxlength="8" bindinput="pass">{{verifyCode}}</input>
+    </view>
+   
+    <button class='verification-bottom' disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode">
+      {{time}}
+    </button>
+  </view>
+  
+  </view>
+  <view class='BindNext' bindtap='bindSure'>确定</view>
+</view>

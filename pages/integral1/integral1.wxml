@@ -1,0 +1,79 @@
+
+
+
+<view class='hs_header'>
+  <view class='hs_header_bg'><image src='http://image.quku199.com/integral/header_bg.png'></image></view>
+  <view class='hs_header_body'>
+    <view class='hs_header_img'><image src='http://image.quku199.com/integral/icon_star.png'></image></view>
+    <view class='hs_header_text'>
+      <view class='hs_header_text_integralNum'>
+        <view>{{Integral}}</view>
+        <text>积分</text>
+      </view>
+      <view class='hs_header_text_text' wx:if="{{date > 0}}">
+        <text>已连续签到{{date}}天</text>
+      </view>
+    </view>
+    <view class='hs_header_text_day' bindtap='urlFun'>积分明细</view>
+  </view>
+</view>
+
+<view class='hs_commodity'>
+  <view class='hs_commodity_title'>
+    <view class='hs_commodity_title_img1'><image src='http://image.quku199.com/integral/commodity_title.png'></image></view>
+    <view class='hs_commodity_title_text'>为您推荐</view>
+    <view class='hs_commodity_title_img2'><image src='http://image.quku199.com/integral/commodity_title.png'></image></view>
+  </view>
+</view>
+
+
+<view class='hs_get'> 
+  <view class='hs_get_list' wx:for="{{recommendList}}" data-id="{{item.CouponID}}" wx:key="unique" catchtap='urlFun3'>
+    <view class='hs_list_left'>
+      <view class='hs_left_img'><image src='{{item.CouponImageUrl}}'></image></view>
+      <view class='hs_left_icon' wx:if="{{item.MaxIntegral == 0}}"><image src='http://image.quku199.com/shopDetails/free_of_charge.png'></image></view>
+      <view class='hs_left_icon' wx:else><image src='http://image.quku199.com/shopDetails/integral.png'></image></view>
+    </view> 
+    <view class='hs_list_centent'>
+      <view class='hs_content_title'>{{item.CouponName}}</view>
+      <view class='hs_content_address'>
+        <view><image src='http://image.quku199.com/merchant-details-image/details-DW.png'></image></view>
+        <text>{{item.Adress}}</text>
+      </view>
+      <view class='hs_content_num'>已领{{item.ReceiveCount}}张</view>
+    </view>
+    <view class='hs_list_x'>
+      <view class='hs_x_top'></view>
+      <view class='hs_x_bottom'></view>
+    </view>
+    <view class='hs_list_right'>
+      <view class='hs_right_integral'>{{item.MaxIntegral}}积分</view>
+      <view class='hs_right_get' catchtap='getDiscount' data-id='{{item.CouponID}}'>立即领券</view>
+    </view>
+  </view>
+
+</view>
+
+
+<view class='hs_popBg' wx:if="{{popShow}}">
+  <view class='hs_pop_content'>
+      <view class='hs_pop' wx:if="{{popStateShow}}">
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_succes.png'></image></view>
+      <view class='hs_pop_text1'>领取成功</view>
+      <view class='hs_pop_text2'>请在免费券有效期以内去使用</view>
+      <view class='hs_pop_btn'>
+        <text catchtap='popShow'>取消</text>
+        <text catchtap='urlFun2'>去使用</text>
+      </view>
+    </view>  
+      <view class='hs_pop' wx:else>
+      <view class='hs_pop_img'><image src='http://image.quku199.com/Free-Volume-List/icon_err.png'></image></view>
+      <view class='hs_pop_text1'>领取失败</view>
+      <view class='hs_pop_text2'>{{popMsg}}</view>
+      <view class='hs_pop_btn'>
+        <view catchtap='popShow'>确定</view>
+      </view>
+    </view>  
+  </view>
+</view>
+

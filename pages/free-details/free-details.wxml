@@ -1,0 +1,110 @@
+ <view class='free-head'>
+  <view class='free-head-one'>
+    <view class='free-head-One'>
+      <view class='free-head-Otext'>{{freeDetails.BusinessName}}</view>
+      <view class='free-head-oneimg'>
+        <image src='http://image.quku199.com/free-details/free-left.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='free-head-two'>
+    <view class='free-head-Ttext'>{{freeDetails.CouponName}}</view>
+    <view class='free-head-Tnum'>
+      <text>{{freeDetails.MaxIntegral}}</text>积分</view>
+  </view>
+  <view class='free-head-three'>{{freeDetails.EndTime}}</view>
+  <view class='free-head-XX'>
+    <image src='http://image.quku199.com/free-details/free-XX.png'></image>
+  </view>
+  <view class='free-head-four'>
+    <view class='free-head-Ftext'>验证码</view>
+    <view class='free-head-Fnum'>{{freeDetails.CouponNmber}}</view>
+  </view>
+  <view class='free-head-five'>
+    <image src='{{freeDetails.QRCodeURL}}'></image>
+  </view>
+</view>
+
+<view class='free-Address'>
+  <view class='free-Address-left' catchtap='addressFun'>
+    <view class='free-Address-name'>{{freeDetails.BusinessName}}</view>
+    <view class='free-Address-bottom'>
+      <view class='free-Address-dw'>{{freeDetails.Adress}}</view>
+      <view class='free-Address-dw-right'>
+        <view class='free-Address-DW'>
+          <image src='http://image.quku199.com/free-details/free-DW.png'></image>
+        </view>
+        <view class='free-Address-num'>
+          <text>{{freeDetails.Distance}}</text>km</view>
+      </view>
+    </view>
+  </view>
+  <view class='free-Address-SX'></view>
+  <view class='free-Address-phone' data-tel='{{freeDetails.Phone}}' bindtap='telFun'>
+    <image src='http://image.quku199.com/free-details/free-phone.png'></image>
+  </view>
+</view>
+
+<view class='free-title'>
+  <view class='free-title-content'>
+    <view class='free-JTL'>
+      <image src='http://image.quku199.com/free-details/free-JTL.png'></image>
+    </view>
+    <view class='free-title-content-TJ'>为您推荐</view>
+    <view class='free-JTR'>
+      <image src='http://image.quku199.com/free-details/free-JTR.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='free-list'>
+  <view class='free-Bottom' wx:for="{{freeList}}" wx:key="unique" catchtap='urlFun' data-id='{{item.BusinessID}}' data-url='shopDetails' >
+    <view class='free-Bottom-img'>
+      <image src='{{item.HeadImageUrl}}'></image>
+    </view>
+    <view class='free-Bottom-right'>
+      <view class='free-Bottom-head'>
+        <view class='free-Bottom-Ohead'>{{item.BusinessName}}</view>
+        <view class='free-Bottom-num'>
+          <text>{{item.Distance}}</text>km</view>
+      </view>
+      <view class='free-Bottom-two'>
+        <view class='star' wx:for="{{starsNum}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
+          <view wx:if="{{ (idx+1) <= item.star}}">
+            <image src='http://image.quku199.com/free-details/free-xing.png'></image>
+          </view>
+          <view wx:elif="{{ (idx+1) - item.star < 1 && (idx+1) - item.star != 0}}">
+            <image src='http://image.quku199.com/free-details/free-Bxing.png'></image>
+          </view>
+          <view wx:else>
+            <image src='http://image.quku199.com/free-details/free-Mxing.png'></image>
+          </view>
+        </view>
+        <view class='free-Bottom-SX'></view>
+        <view class='free-Botoom-word'>月销
+          <text>{{item.MonthSalesNum}}</text>
+        </view>
+      </view>
+      <view class='free-Bottom-XuX'></view>
+      <view class='free-Bottom-four' wx:if="{{item.ConfigName != null}}">
+        <block wx:if="{{arr}}">
+          <view class='free-Bottom-four-box' wx:for="{{item.ConfigName}}" wx:for-item="Free" wx:key="unique">{{Free}}</view>
+        </block>
+        <view wx:else class='free-Bottom-four-box'>{{item.ConfigName}}</view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+</view> 
+
+
+

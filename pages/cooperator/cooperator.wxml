@@ -1,0 +1,52 @@
+<!--pages/cooperator/cooperator.wxml-->
+<view class='cooperator-head'>
+  <view class='cooperator-head-center'>
+    <view class='cooperator-head-center-one'>
+      <view class='cooperator-head-center-one-name'>姓名</view>
+      <view class='cooperator-head-center-one-input'><input placeholder='请输入' bindinput='quZhi' data-name='1'></input></view>
+    </view>
+
+     <view class='cooperator-head-center-one'>
+      <view class='cooperator-head-center-one-name'>联系方式</view>
+      <view class='cooperator-head-center-one-input'><input placeholder='请输入' bindinput='quZhi' data-name='2'></input></view>
+    </view>
+
+    <view class='cooperator-head-center-two'>
+      <view class='cooperator-head-center-one-name'>邮箱</view>
+      <view class='cooperator-head-center-one-input'><input placeholder='请输入' bindinput='quZhi' data-name='3'></input></view>
+    </view>
+
+  </view>
+</view>
+<view class='cooperator-second'>
+  <view class='cooperator-second-center'>
+  <view class='cooperator-second-center-name'>预计投入资金</view>
+  <view class='cooperator-second-center-input'><input placeholder='请输入金额' type='number' bindinput='quZhi' data-name='4'></input></view>
+  <view class='cooperator-second-center-txt'>元</view>
+  </view>
+</view>
+<view class='cooperator-three'>
+  <view class='cooperator-three-center'>
+    <view class='cooperator-three-center-one'>
+      <view class='cooperator-three-center-one-name'>第一意向合作省份</view>
+      <view class='cooperator-three-center-one-input'><input placeholder='请输入' bindinput='quZhi' data-name='5'></input></view>
+    </view>
+
+    <view class='cooperator-three-center-one'>
+      <view class='cooperator-three-center-one-name'>第一意向合作城市</view>
+      <view class='cooperator-three-center-one-input'><input placeholder='请输入' bindinput='quZhi' data-name='6'></input></view>
+    </view>
+
+    <view class='cooperator-three-center-one'>
+      <view class='cooperator-three-center-one-name'>第二意向合作省份</view>
+      <view class='cooperator-three-center-one-input'><input placeholder='请输入' bindinput='quZhi' data-name='7'></input></view>
+    </view>
+
+    <view class='cooperator-three-center-two'>
+      <view class='cooperator-three-center-one-name'>第二意向合作城市</view>
+      <view class='cooperator-three-center-one-input'><input placeholder='请输入' bindinput='quZhi' data-name='8'></input></view>
+    </view>
+  </view>
+</view>
+<view class='cooperator-four'>《趣开心代理城市细则》</view>
+<view class='cooperator-five' bindtap='cooSure'>提交</view>
